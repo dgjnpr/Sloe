@@ -1,5 +1,4 @@
 require "sloe/version"
-require 'rubygems'
 require 'net/juniper/netconf/device'
 require 'net/juniper/netconf/netconf_session'
 require 'net/juniper/netconf/xml'
@@ -15,8 +14,9 @@ module Sloe
 	    self.host = host
 	    self.user = user
 	    self.password = password
-      
-	    self.connect
+      self.connect
+
+      @manager = SNMP::Manager.new(:host => host)
 	    self
 	  end
 
