@@ -17,7 +17,8 @@ module Sloe
       self.connect
 
       @manager = SNMP::Manager.new(:host => host)
-	    self
+	    
+      self
 	  end
 
 	  def get_ifd(ifd_name)
@@ -32,11 +33,9 @@ module Sloe
 
 	  def ifd_snmp_inOctets(ifd_name)
 	    @ifd = self.get_ifd(ifd_name)
-	    @ifIndex = @ifd.xpath('//snmp-index').text
+	    @ifIndex = @ifd.xpath('/interface-information/physical-interface/snmp-index').text
 
-	    SNMP::Manager.open(:Host => self.host) do |manager|
-	      manager.get('ifInOctets.' + @ifIndex).varbind_list[0].value.to_i
-	    end
-	  end
+      @manager.get('ifInOctets.' + @ifIndex).varbind_list[0].value.to_i
+    end
 	end
 end
