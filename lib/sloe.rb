@@ -1,5 +1,4 @@
 require "sloe/version"
-require 'rubygems'
 require 'net/juniper/netconf/device'
 require 'net/juniper/netconf/netconf_session'
 require 'net/juniper/netconf/xml'
@@ -15,9 +14,11 @@ module Sloe
 	    self.host = host
 	    self.user = user
 	    self.password = password
-      
-	    self.connect
-	    self
+      self.connect
+
+      @manager = SNMP::Manager.new(:host => host)
+	    
+      self
 	  end
 
 	  def get_ifd(ifd_name)
@@ -32,11 +33,9 @@ module Sloe
 
 	  def ifd_snmp_inOctets(ifd_name)
 	    @ifd = self.get_ifd(ifd_name)
-	    @ifIndex = @ifd.xpath('//snmp-index').text
+	    @ifIndex = @ifd.xpath('/interface-information/physical-interface/snmp-index').text
 
-	    SNMP::Manager.open(:Host => self.host) do |manager|
-	      manager.get('ifInOctets.' + @ifIndex).varbind_list[0].value.to_i
-	    end
-	  end
+      @manager.get('ifInOctets.' + @ifIndex).varbind_list[0].value.to_i
+    end
 	end
 end
