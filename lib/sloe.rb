@@ -17,9 +17,35 @@ module Sloe
       self.connect
 
       @manager = SNMP::Manager.new(:host => host)
+      # suspect the following will be needed to load JNX enterprise MIBs
+      # @manager.load_module(MIB)
 	    
       self
 	  end
+
+	  def snmp_get(object)
+	  	@manager.get_value(object)
+	  end
+
+	  def snmp_get_pdu(object)
+	  	@manager.get(object)
+	  end
+
+	  def snmp_get_bulk(non_repeaters, max_repetitions, object_list)
+	  	@manager.get_bulk(non_repeaters, max_repetitions, object_list)
+	  end
+
+	  def snmp_get_next(object_list)
+	  	@manager.get_next(object_list)
+	  end
+
+		# need to work out how to pass a code block to walk,
+		# or how to add SNMP::Manager methods directly to this object	
+	  # def snmp_walk(object_list, index_column = 0)
+	  # 	@manager.walk(object_list, index_column)
+	  # end
+
+	  # following methods were used during initial dev. Should be removed once production ready
 
 	  def get_ifd(ifd_name)
 	    @rpc = "<get-interface-information><interface-name>#{ifd_name}</interface-name></get-interface-information>"

@@ -12,10 +12,11 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Sloe is a one stop shop for collecting data from a Juniper device using NETCONF or SNMP}
   gem.homepage      = ""
 
-  gem.add_dependency = 'snmp'
-  gem.add_dependency = 'netconf'
-  gem.add_development_dependency = 'rspec'
-  gem.add_development_dependency = 'yard'
+  gem.add_dependency('snmp')
+  gem.add_dependency('netconf')
+  gem.add_development_dependency('rspec')
+  gem.add_development_dependency('yard')
+  gem.add_development_dependency('ruby-debug19')
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
