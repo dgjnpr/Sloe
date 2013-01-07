@@ -1,6 +1,6 @@
 # Sloe
 
-TODO: Write a gem description
+Sloe uses NETCONF and/or SNMP to gather data regarding a network device. Designed to help with automated testing this gem can also be used with things like Ruby on Rails
 
 ## Installation
 
@@ -18,7 +18,29 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+require 'sloe'
+
+# create options hash
+
+options = {:target => 'remotehost', :username => 'foo', :password => 'bar'}
+
+Sloe::Device.new(options) { |device|
+  # establish connection to device
+  devuce.open
+
+  # call a Netconf RPC and display some of output
+  inventory = device.rpc.get_chassis_inventory
+  puts "Chassis: " + inventory.xpath('chassis/description').text
+
+  # display SNMP data
+  puts device.snmp_get('sysDescr.0')
+
+}
+
+
+## SUPPORT:
+
+This software is not officially supported by Juniper Networks, but by a team dedicated to helping customers, partners, and the development community.  To report bug-fixes, issues, susggestions, please contact David Gethings <dgethings@juniper.net>
 
 ## Contributing
 

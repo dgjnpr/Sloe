@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = Sloe::VERSION
   gem.authors       = ["David Gethings"]
   gem.email         = ["dgethings@juniper.net"]
-  gem.description   = %q{Slow uses NETCONF and/or SNMP to gather data regarding a  Juniper device. Designed to help with automated testing this gem can also be used with things like Ruby on Rails}
+  gem.description   = %q{Sloe uses NETCONF and/or SNMP to gather data regarding a network device. Designed to help with automated testing this gem can also be used with things like Ruby on Rails}
   gem.summary       = %q{Sloe is a one stop shop for collecting data from a Juniper device using NETCONF or SNMP}
   gem.homepage      = ""
 

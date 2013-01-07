@@ -2,18 +2,16 @@ require 'sloe/version'
 require 'net/netconf'
 require 'snmp'
 
+
 module Sloe
 	class Device < Netconf::SSH
 
-	  def initialize(host,user,password)
-	    super(:target => host, :username => user, :password => password)
+	  def initialize(args)
+	    super(args)
 	    self.open
 
-	    # TODO: set this so that MIBs loaded are passed in, rather than hard coded here
-      # load all local yaml-fied MIB files
-      @jnx_mibs = Dir.glob("./mibs/JUNIPER-*.yaml").map { |f| File.basename(f, '.yaml')}
-      @mib_files = ["SNMPv2-SMI", "SNMPv2-MIB", "IF-MIB", "IP-MIB", "TCP-MIB", "UDP-MIB"].concat(@jnx_mibs)
-      @manager = SNMP::Manager.new(:host => host, :mib_dir => './mibs', :mib_modules => @mib_files)
+	    @snmp_args = {:host => args[:target], :mib_dir => args[:mib_dir], :mib_modules => args[:mib_modules]}
+      @manager = SNMP::Manager.new(@snmp_args)
 	    
       self
 	  end
@@ -36,27 +34,8 @@ module Sloe
 
 		# need to work out how to pass a code block to walk,
 		# or how to add SNMP::Manager methods directly to this object	
-	  # def snmp_walk(object_list, index_column = 0)
-	  # 	@manager.walk(object_list, index_column)
-	  # end
-
-	  # following methods were used during initial dev. Should be removed once production ready
-
-	  def get_ifd(ifd_name)
-	    @rpc = "<get-interface-information><interface-name>#{ifd_name}</interface-name></get-interface-information>"
-	    self.execute_rpc(@rpc)
+	  def snmp_walk(object_list, index_column = 0, &block)
+	  	@manager.walk(object_list, index_column, &block)
 	  end
-
-	  def ifd_cli_inOctets(ifd_name)
-	    @ifd = self.get_ifd(ifd_name)
-	    @ifd.xpath('//input-bps').text.to_i
-	  end
-
-	  def ifd_snmp_inOctets(ifd_name)
-	    @ifd = self.get_ifd(ifd_name)
-	    @ifIndex = @ifd.xpath('/interface-information/physical-interface/snmp-index').text
-
-      @manager.get('ifInOctets.' + @ifIndex).varbind_list[0].value.to_i
-    end
 	end
 end
