@@ -18,27 +18,25 @@ Or install it yourself as:
 
 ## Usage
 
-require 'sloe'
+  require 'sloe'
 
-# create options hash
+  # create options hash
 
-options = {:target => 'remotehost', :username => 'foo', :password => 'bar'}
+  options = {:target => 'remotehost', :username => 'foo', :password => 'bar'}
 
-Sloe::Device.new(options) { |device|
-  # establish connection to device
-  devuce.open
+  Sloe::Device.new(options) { |device|
+    # establish connection to device
+    device.open
 
-  # call a Netconf RPC and display some of output
-  inventory = device.rpc.get_chassis_inventory
-  puts "Chassis: " + inventory.xpath('chassis/description').text
+    # call a Netconf RPC and display some of output
+    inventory = device.rpc.get_chassis_inventory
+    puts "Chassis: " + inventory.xpath('chassis/description').text
 
-  # display SNMP data
-  puts device.snmp_get('sysDescr.0')
+    # display SNMP data
+    puts device.snmp_get('sysDescr.0')
+  } 
 
-}
-
-
-## SUPPORT:
+## SUPPORT
 
 This software is not officially supported by Juniper Networks, but by a team dedicated to helping customers, partners, and the development community.  To report bug-fixes, issues, susggestions, please contact David Gethings <dgethings@juniper.net>
 
