@@ -1,21 +1,15 @@
-require "sloe/version"
-require 'net/juniper/netconf/device'
-require 'net/juniper/netconf/netconf_session'
-require 'net/juniper/netconf/xml'
+require 'sloe/version'
+require 'net/netconf'
 require 'snmp'
 
 module Sloe
-	class Device < Netconf::Device
-	  attr_accessor :host, :user
-	  attr_writer :password
+	class Device < Netconf::SSH
 
 	  def initialize(host,user,password)
-	    super(host, :username => user, :password => password)
-	    self.host = host
-	    self.user = user
-	    self.password = password
-      self.connect
+	    super(:target => host, :username => user, :password => password)
+	    self.open
 
+	    # TODO: set this so that MIBs loaded are passed in, rather than hard coded here
       # load all local yaml-fied MIB files
       @jnx_mibs = Dir.glob("./mibs/JUNIPER-*.yaml").map { |f| File.basename(f, '.yaml')}
       @mib_files = ["SNMPv2-SMI", "SNMPv2-MIB", "IF-MIB", "IP-MIB", "TCP-MIB", "UDP-MIB"].concat(@jnx_mibs)

@@ -35,4 +35,20 @@ describe Sloe do
     end
   end
 
+  context "NETCONF API" do
+    it "get_interface_information()" do
+      @dut.rpc.get_interface_information().should_not be_nil
+    end
+    it "get_interface_information(:interface => 'fxp0')" do
+      pending("bug to be fixed in Netconf gem")
+      @dut.rpc.get_interface_information(:interface => 'fxp0').should_not be_nil
+    end
+    it "get_ospf_neighbor_information()" do
+      @dut.rpc.get_ospf_neighbor_information().should_not be_nil
+    end
+    it "get_ospf_neighbor_information(:area => '0.0.0.9')" do
+      @dut.rpc.get_ospf_neighbor_information(:area => '0.0.0.9').should_not be_nil
+    end
+  end
+
 end
