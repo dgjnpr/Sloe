@@ -1,0 +1,17 @@
+---
+jnxDCUs: 1.3.6.1.4.1.2636.3.6
+jnxDCUsTable: 1.3.6.1.4.1.2636.3.6.1
+jnxDCUsEntry: 1.3.6.1.4.1.2636.3.6.1.1
+jnxDCUSrcIfIndex: 1.3.6.1.4.1.2636.3.6.1.1.1
+jnxDCUDstClassName: 1.3.6.1.4.1.2636.3.6.1.1.2
+jnxDCUPackets: 1.3.6.1.4.1.2636.3.6.1.1.3
+jnxDCUBytes: 1.3.6.1.4.1.2636.3.6.1.1.4
+jnxDcuStatsTable: 1.3.6.1.4.1.2636.3.6.2
+jnxDcuStatsEntry: 1.3.6.1.4.1.2636.3.6.2.1
+jnxDcuStatsSrcIfIndex: 1.3.6.1.4.1.2636.3.6.2.1.1
+jnxDcuStatsAddrFamily: 1.3.6.1.4.1.2636.3.6.2.1.2
+jnxDcuStatsClassName: 1.3.6.1.4.1.2636.3.6.2.1.3
+jnxDcuStatsPackets: 1.3.6.1.4.1.2636.3.6.2.1.4
+jnxDcuStatsBytes: 1.3.6.1.4.1.2636.3.6.2.1.5
+jnxDcuStatsClName: 1.3.6.1.4.1.2636.3.6.2.1.6
+

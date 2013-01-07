@@ -9,7 +9,7 @@ describe Sloe do
 
   context "SNMP method" do
     it "should return value for snmp_get()" do
-      @dut.snmp_get('sysDescr.0') =~ /^Juniper Networks,/
+      @dut.snmp_get('sysDescr.0').should =~ /^Juniper Networks,/
     end
     it "should return PDU for snmp_get_pdu()" do
       @pdu = @dut.snmp_get_pdu('sysDescr.0')
@@ -28,4 +28,11 @@ describe Sloe do
       @dut.snmp_walk('system') { |vb| vb.should_not be_nil }
     end
   end
+
+  context "JNX Enterprise MIBs" do
+    it "should have valid jnxBoxDescr value" do
+      @dut.snmp_get('jnxBoxDescr.0').should =~ /^Juniper/
+    end
+  end
+
 end

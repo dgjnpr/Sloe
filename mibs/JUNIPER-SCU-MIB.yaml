@@ -1,0 +1,12 @@
+---
+jnxScu: 1.3.6.1.4.1.2636.3.16
+jnxScuStats: 1.3.6.1.4.1.2636.3.16.1
+jnxScuStatsTable: 1.3.6.1.4.1.2636.3.16.1.1
+jnxScuStatsEntry: 1.3.6.1.4.1.2636.3.16.1.1.1
+jnxScuStatsDstIfIndex: 1.3.6.1.4.1.2636.3.16.1.1.1.1
+jnxScuStatsAddrFamily: 1.3.6.1.4.1.2636.3.16.1.1.1.2
+jnxScuStatsClassName: 1.3.6.1.4.1.2636.3.16.1.1.1.3
+jnxScuStatsPackets: 1.3.6.1.4.1.2636.3.16.1.1.1.4
+jnxScuStatsBytes: 1.3.6.1.4.1.2636.3.16.1.1.1.5
+jnxScuStatsClName: 1.3.6.1.4.1.2636.3.16.1.1.1.6
+

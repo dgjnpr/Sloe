@@ -1,0 +1,9 @@
+---
+jnxFwdd: 1.3.6.1.4.1.2636.3.34
+jnxFwddProcess: 1.3.6.1.4.1.2636.3.34.1
+jnxFwddMicroKernelCPUUsage: 1.3.6.1.4.1.2636.3.34.1.1
+jnxFwddRtThreadsCPUUsage: 1.3.6.1.4.1.2636.3.34.1.2
+jnxFwddHeapUsage: 1.3.6.1.4.1.2636.3.34.1.3
+jnxFwddDmaMemUsage: 1.3.6.1.4.1.2636.3.34.1.4
+jnxFwddUpTime: 1.3.6.1.4.1.2636.3.34.1.5
+

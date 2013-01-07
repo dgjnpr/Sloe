@@ -1,0 +1,29 @@
+---
+jnxNatMIB: 1.3.6.1.4.1.2636.3.59.1
+jnxNatNotifications: 1.3.6.1.4.1.2636.3.59.1.0
+jnxNatObjects: 1.3.6.1.4.1.2636.3.59.1.1
+jnxSrcNatStatsTable: 1.3.6.1.4.1.2636.3.59.1.1.1
+jnxSrcNatStatsEntry: 1.3.6.1.4.1.2636.3.59.1.1.1.1
+jnxNatSrcPoolName: 1.3.6.1.4.1.2636.3.59.1.1.1.1.1
+jnxNatSrcXlatedAddrType: 1.3.6.1.4.1.2636.3.59.1.1.1.1.2
+jnxNatSrcPoolType: 1.3.6.1.4.1.2636.3.59.1.1.1.1.3
+jnxNatSrcNumPortAvail: 1.3.6.1.4.1.2636.3.59.1.1.1.1.4
+jnxNatSrcNumPortInuse: 1.3.6.1.4.1.2636.3.59.1.1.1.1.5
+jnxNatSrcNumAddressAvail: 1.3.6.1.4.1.2636.3.59.1.1.1.1.6
+jnxNatSrcNumAddressInUse: 1.3.6.1.4.1.2636.3.59.1.1.1.1.7
+jnxNatSrcNumSessions: 1.3.6.1.4.1.2636.3.59.1.1.1.1.8
+jnxNatRuleTable: 1.3.6.1.4.1.2636.3.59.1.1.2
+jnxNatRuleEntry: 1.3.6.1.4.1.2636.3.59.1.1.2.1
+jnxNatRuleName: 1.3.6.1.4.1.2636.3.59.1.1.2.1.1
+jnxNatRuleType: 1.3.6.1.4.1.2636.3.59.1.1.2.1.2
+jnxNatRuleTransHits: 1.3.6.1.4.1.2636.3.59.1.1.2.1.3
+jnxNatPoolTable: 1.3.6.1.4.1.2636.3.59.1.1.3
+jnxNatPoolEntry: 1.3.6.1.4.1.2636.3.59.1.1.3.1
+jnxNatPoolName: 1.3.6.1.4.1.2636.3.59.1.1.3.1.1
+jnxNatPoolType: 1.3.6.1.4.1.2636.3.59.1.1.3.1.2
+jnxNatPoolTransHits: 1.3.6.1.4.1.2636.3.59.1.1.3.1.3
+jnxNatTrapVars: 1.3.6.1.4.1.2636.3.59.1.2
+jnxNatAddrPoolUtil: 1.3.6.1.4.1.2636.3.59.1.2.1
+jnxNatTrapSrcPoolName: 1.3.6.1.4.1.2636.3.59.1.2.2
+jnxNatAddrPoolThresholdStatus: 1.3.6.1.4.1.2636.3.59.1.0.1
+

@@ -1,0 +1,10 @@
+---
+jnxTraceRouteMIB: 1.3.6.1.4.1.2636.3.8
+jnxTraceRouteObjects: 1.3.6.1.4.1.2636.3.8.1
+jnxTraceRouteCtlTable: 1.3.6.1.4.1.2636.3.8.1.2
+jnxTraceRouteCtlEntry: 1.3.6.1.4.1.2636.3.8.1.2.1
+jnxTRCtlOwnerIndex: 1.3.6.1.4.1.2636.3.8.1.2.1.1
+jnxTRCtlTestName: 1.3.6.1.4.1.2636.3.8.1.2.1.2
+jnxTRCtlIfName: 1.3.6.1.4.1.2636.3.8.1.2.1.3
+jnxTRCtlRoutingInstanceName: 1.3.6.1.4.1.2636.3.8.1.2.1.4
+

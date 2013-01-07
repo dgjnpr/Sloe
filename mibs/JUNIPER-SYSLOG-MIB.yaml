@@ -1,0 +1,22 @@
+---
+jnxSyslog: 1.3.6.1.4.1.2636.3.35
+jnxSyslogNotifyVars: 1.3.6.1.4.1.2636.3.35.1
+jnxSyslogTable: 1.3.6.1.4.1.2636.3.35.1.1
+jnxSyslogEntry: 1.3.6.1.4.1.2636.3.35.1.1.1
+jnxSyslogId: 1.3.6.1.4.1.2636.3.35.1.1.1.1
+jnxSyslogEventName: 1.3.6.1.4.1.2636.3.35.1.1.1.2
+jnxSyslogTimestamp: 1.3.6.1.4.1.2636.3.35.1.1.1.3
+jnxSyslogSeverity: 1.3.6.1.4.1.2636.3.35.1.1.1.4
+jnxSyslogFacility: 1.3.6.1.4.1.2636.3.35.1.1.1.5
+jnxSyslogProcessId: 1.3.6.1.4.1.2636.3.35.1.1.1.6
+jnxSyslogProcessName: 1.3.6.1.4.1.2636.3.35.1.1.1.7
+jnxSyslogHostName: 1.3.6.1.4.1.2636.3.35.1.1.1.8
+jnxSyslogMessage: 1.3.6.1.4.1.2636.3.35.1.1.1.9
+jnxSyslogAvTable: 1.3.6.1.4.1.2636.3.35.1.2
+jnxSyslogAvEntry: 1.3.6.1.4.1.2636.3.35.1.2.1
+jnxSyslogAvIndex: 1.3.6.1.4.1.2636.3.35.1.2.1.1
+jnxSyslogAvAttribute: 1.3.6.1.4.1.2636.3.35.1.2.1.2
+jnxSyslogAvValue: 1.3.6.1.4.1.2636.3.35.1.2.1.3
+jnxSyslogNotificationPrefix: 1.3.6.1.4.1.2636.4.12.0
+jnxSyslogTrap: 1.3.6.1.4.1.2636.4.12.0.1
+

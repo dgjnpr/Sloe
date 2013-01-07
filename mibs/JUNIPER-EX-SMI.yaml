@@ -1,0 +1,10 @@
+---
+jnxExSwitching: 1.3.6.1.4.1.2636.3.40.1
+jnxExAnalyzer: 1.3.6.1.4.1.2636.3.40.1.1
+jnxExSecureAccessPort: 1.3.6.1.4.1.2636.3.40.1.2
+jnxExPaeExtension: 1.3.6.1.4.1.2636.3.40.1.3
+jnxExVirtualChassis: 1.3.6.1.4.1.2636.3.40.1.4
+jnxExVlan: 1.3.6.1.4.1.2636.3.40.1.5
+jnxRPS: 1.3.6.1.4.1.2636.3.40.1.6
+jnxMacNotificationRoot: 1.3.6.1.4.1.2636.3.40.1.7
+

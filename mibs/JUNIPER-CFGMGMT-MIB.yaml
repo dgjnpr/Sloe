@@ -1,0 +1,27 @@
+---
+jnxCfgMgmt: 1.3.6.1.4.1.2636.3.18
+jnxCmCfgChg: 1.3.6.1.4.1.2636.3.18.1
+jnxCmCfgChgLatestIndex: 1.3.6.1.4.1.2636.3.18.1.1
+jnxCmCfgChgLatestTime: 1.3.6.1.4.1.2636.3.18.1.2
+jnxCmCfgChgLatestDate: 1.3.6.1.4.1.2636.3.18.1.3
+jnxCmCfgChgLatestSource: 1.3.6.1.4.1.2636.3.18.1.4
+jnxCmCfgChgLatestUser: 1.3.6.1.4.1.2636.3.18.1.5
+jnxCmCfgChgMaxEventEntries: 1.3.6.1.4.1.2636.3.18.1.6
+jnxCmCfgChgEventTable: 1.3.6.1.4.1.2636.3.18.1.7
+jnxCmCfgChgEventEntry: 1.3.6.1.4.1.2636.3.18.1.7.1
+jnxCmCfgChgEventIndex: 1.3.6.1.4.1.2636.3.18.1.7.1.1
+jnxCmCfgChgEventTime: 1.3.6.1.4.1.2636.3.18.1.7.1.2
+jnxCmCfgChgEventDate: 1.3.6.1.4.1.2636.3.18.1.7.1.3
+jnxCmCfgChgEventSource: 1.3.6.1.4.1.2636.3.18.1.7.1.4
+jnxCmCfgChgEventUser: 1.3.6.1.4.1.2636.3.18.1.7.1.5
+jnxCmCfgChgEventLog: 1.3.6.1.4.1.2636.3.18.1.7.1.6
+jnxCmRescueChg: 1.3.6.1.4.1.2636.3.18.2
+jnxCmRescueChgTime: 1.3.6.1.4.1.2636.3.18.2.1
+jnxCmRescueChgDate: 1.3.6.1.4.1.2636.3.18.2.2
+jnxCmRescueChgSource: 1.3.6.1.4.1.2636.3.18.2.3
+jnxCmRescueChgUser: 1.3.6.1.4.1.2636.3.18.2.4
+jnxCmRescueChgState: 1.3.6.1.4.1.2636.3.18.2.5
+jnxCmNotificationsPrefix: 1.3.6.1.4.1.2636.4.5.0
+jnxCmCfgChange: 1.3.6.1.4.1.2636.4.5.0.1
+jnxCmRescueChange: 1.3.6.1.4.1.2636.4.5.0.2
+

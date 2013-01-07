@@ -16,9 +16,10 @@ module Sloe
 	    self.password = password
       self.connect
 
-      @manager = SNMP::Manager.new(:host => host)
-      # suspect the following will be needed to load JNX enterprise MIBs
-      # @manager.load_module(MIB)
+      # load all local yaml-fied MIB files
+      @jnx_mibs = Dir.glob("./mibs/JUNIPER-*.yaml").map { |f| File.basename(f, '.yaml')}
+      @mib_files = ["SNMPv2-SMI", "SNMPv2-MIB", "IF-MIB", "IP-MIB", "TCP-MIB", "UDP-MIB"].concat(@jnx_mibs)
+      @manager = SNMP::Manager.new(:host => host, :mib_dir => './mibs', :mib_modules => @mib_files)
 	    
       self
 	  end

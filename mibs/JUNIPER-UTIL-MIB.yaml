@@ -1,0 +1,29 @@
+---
+jnxUtil: 1.3.6.1.4.1.2636.3.47.1
+jnxUtilData: 1.3.6.1.4.1.2636.3.47.1.1
+jnxUtilCounter32Table: 1.3.6.1.4.1.2636.3.47.1.1.1
+jnxUtilCounter32Entry: 1.3.6.1.4.1.2636.3.47.1.1.1.1
+jnxUtilCounter32Name: 1.3.6.1.4.1.2636.3.47.1.1.1.1.1
+jnxUtilCounter32Value: 1.3.6.1.4.1.2636.3.47.1.1.1.1.2
+jnxUtilCounter32Time: 1.3.6.1.4.1.2636.3.47.1.1.1.1.3
+jnxUtilCounter64Table: 1.3.6.1.4.1.2636.3.47.1.1.2
+jnxUtilCounter64Entry: 1.3.6.1.4.1.2636.3.47.1.1.2.1
+jnxUtilCounter64Name: 1.3.6.1.4.1.2636.3.47.1.1.2.1.1
+jnxUtilCounter64Value: 1.3.6.1.4.1.2636.3.47.1.1.2.1.2
+jnxUtilCounter64Time: 1.3.6.1.4.1.2636.3.47.1.1.2.1.3
+jnxUtilIntegerTable: 1.3.6.1.4.1.2636.3.47.1.1.3
+jnxUtilIntegerEntry: 1.3.6.1.4.1.2636.3.47.1.1.3.1
+jnxUtilIntegerName: 1.3.6.1.4.1.2636.3.47.1.1.3.1.1
+jnxUtilIntegerValue: 1.3.6.1.4.1.2636.3.47.1.1.3.1.2
+jnxUtilIntegerTime: 1.3.6.1.4.1.2636.3.47.1.1.3.1.3
+jnxUtilUintTable: 1.3.6.1.4.1.2636.3.47.1.1.4
+jnxUtilUintEntry: 1.3.6.1.4.1.2636.3.47.1.1.4.1
+jnxUtilUintName: 1.3.6.1.4.1.2636.3.47.1.1.4.1.1
+jnxUtilUintValue: 1.3.6.1.4.1.2636.3.47.1.1.4.1.2
+jnxUtilUintTime: 1.3.6.1.4.1.2636.3.47.1.1.4.1.3
+jnxUtilStringTable: 1.3.6.1.4.1.2636.3.47.1.1.5
+jnxUtilStringEntry: 1.3.6.1.4.1.2636.3.47.1.1.5.1
+jnxUtilStringName: 1.3.6.1.4.1.2636.3.47.1.1.5.1.1
+jnxUtilStringValue: 1.3.6.1.4.1.2636.3.47.1.1.5.1.2
+jnxUtilStringTime: 1.3.6.1.4.1.2636.3.47.1.1.5.1.3
+

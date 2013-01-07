@@ -1,0 +1,16 @@
+---
+jnxBfdMib: 1.3.6.1.4.1.2636.3.45.1
+jnxBfdNotification: 1.3.6.1.4.1.2636.3.45.1.0
+jnxBfdObjects: 1.3.6.1.4.1.2636.3.45.1.1
+jnxBfdSessTable: 1.3.6.1.4.1.2636.3.45.1.1.1
+jnxBfdSessEntry: 1.3.6.1.4.1.2636.3.45.1.1.1.1
+jnxBfdSessThreshTxInterval: 1.3.6.1.4.1.2636.3.45.1.1.1.1.1
+jnxBfdSessCurrTxInterval: 1.3.6.1.4.1.2636.3.45.1.1.1.1.2
+jnxBfdSessThreshDectTime: 1.3.6.1.4.1.2636.3.45.1.1.1.1.3
+jnxBfdSessCurrDectTime: 1.3.6.1.4.1.2636.3.45.1.1.1.1.4
+jnxBfdSessIntfName: 1.3.6.1.4.1.2636.3.45.1.1.1.1.5
+jnxBfdNotifyObjects: 1.3.6.1.4.1.2636.3.45.1.2
+jnxBfdSessifName: 1.3.6.1.4.1.2636.3.45.1.2.1
+jnxBfdSessTxIntervalHigh: 1.3.6.1.4.1.2636.3.45.1.0.1
+jnxBfdSessDetectionTimeHigh: 1.3.6.1.4.1.2636.3.45.1.0.2
+

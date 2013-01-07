@@ -1,0 +1,12 @@
+---
+jnxMac: 1.3.6.1.4.1.2636.3.23
+jnxMacStats: 1.3.6.1.4.1.2636.3.23.1
+jnxMacStatsTable: 1.3.6.1.4.1.2636.3.23.1.1
+jnxMacStatsEntry: 1.3.6.1.4.1.2636.3.23.1.1.1
+jnxVlanIndex: 1.3.6.1.4.1.2636.3.23.1.1.1.1
+jnxSourceMacAddress: 1.3.6.1.4.1.2636.3.23.1.1.1.2
+jnxMacHCInOctets: 1.3.6.1.4.1.2636.3.23.1.1.1.3
+jnxMacHCInFrames: 1.3.6.1.4.1.2636.3.23.1.1.1.4
+jnxMacHCOutOctets: 1.3.6.1.4.1.2636.3.23.1.1.1.5
+jnxMacHCOutFrames: 1.3.6.1.4.1.2636.3.23.1.1.1.6
+
