@@ -32,8 +32,6 @@ module Sloe
 	  	@manager.get_next(object_list)
 	  end
 
-		# need to work out how to pass a code block to walk,
-		# or how to add SNMP::Manager methods directly to this object	
 	  def snmp_walk(object_list, index_column = 0, &block)
 	  	@manager.walk(object_list, index_column, &block)
 	  end
