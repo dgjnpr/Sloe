@@ -1,0 +1,9 @@
+---
+jnxMagMib: 1.3.6.1.4.1.2636.3.65.1
+jnxMagNotifications: 1.3.6.1.4.1.2636.3.65.1.0
+jnxMagObjects: 1.3.6.1.4.1.2636.3.65.1.1
+jnxMagSSOObjects: 1.3.6.1.4.1.2636.3.65.1.1.1
+jnxMagSSOAuthTokenAttempt: 1.3.6.1.4.1.2636.3.65.1.1.1.1
+jnxMagSSOFailedAuthToken: 1.3.6.1.4.1.2636.3.65.1.1.1.2
+jnxMagSSOValidationError: 1.3.6.1.4.1.2636.3.65.1.0.1
+

@@ -1,0 +1,33 @@
+---
+jnxDomMib: 1.3.6.1.4.1.2636.3.60.1
+jnxDomDigitalMonitoring: 1.3.6.1.4.1.2636.3.60.1.1
+jnxDomCurrentTable: 1.3.6.1.4.1.2636.3.60.1.1.1
+jnxDomCurrentEntry: 1.3.6.1.4.1.2636.3.60.1.1.1.1
+jnxDomCurrentAlarms: 1.3.6.1.4.1.2636.3.60.1.1.1.1.1
+jnxDomCurrentAlarmDate: 1.3.6.1.4.1.2636.3.60.1.1.1.1.2
+jnxDomLastAlarms: 1.3.6.1.4.1.2636.3.60.1.1.1.1.3
+jnxDomCurrentWarnings: 1.3.6.1.4.1.2636.3.60.1.1.1.1.4
+jnxDomCurrentRxLaserPower: 1.3.6.1.4.1.2636.3.60.1.1.1.1.5
+jnxDomCurrentTxLaserBiasCurrent: 1.3.6.1.4.1.2636.3.60.1.1.1.1.6
+jnxDomCurrentTxLaserOutputPower: 1.3.6.1.4.1.2636.3.60.1.1.1.1.7
+jnxDomCurrentModuleTemperature: 1.3.6.1.4.1.2636.3.60.1.1.1.1.8
+jnxDomCurrentRxLaserPowerHighAlarmThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.9
+jnxDomCurrentRxLaserPowerLowAlarmThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.10
+jnxDomCurrentRxLaserPowerHighWarningThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.11
+jnxDomCurrentRxLaserPowerLowWarningThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.12
+jnxDomCurrentTxLaserBiasCurrentHighAlarmThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.13
+jnxDomCurrentTxLaserBiasCurrentLowAlarmThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.14
+jnxDomCurrentTxLaserBiasCurrentHighWarningThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.15
+jnxDomCurrentTxLaserBiasCurrentLowWarningThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.16
+jnxDomCurrentTxLaserOutputPowerHighAlarmThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.17
+jnxDomCurrentTxLaserOutputPowerLowAlarmThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.18
+jnxDomCurrentTxLaserOutputPowerHighWarningThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.19
+jnxDomCurrentTxLaserOutputPowerLowWarningThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.20
+jnxDomCurrentModuleTemperatureHighAlarmThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.21
+jnxDomCurrentModuleTemperatureLowAlarmThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.22
+jnxDomCurrentModuleTemperatureHighWarningThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.23
+jnxDomCurrentModuleTemperatureLowWarningThreshold: 1.3.6.1.4.1.2636.3.60.1.1.1.1.24
+jnxDomNotificationPrefix: 1.3.6.1.4.1.2636.4.18.0
+jnxDomAlarmSet: 1.3.6.1.4.1.2636.4.18.0.1
+jnxDomAlarmCleared: 1.3.6.1.4.1.2636.4.18.0.2
+

@@ -1,0 +1,28 @@
+---
+jnxLdp: 1.3.6.1.4.1.2636.3.14
+jnxLdpTrapVars: 1.3.6.1.4.1.2636.3.14.1
+jnxLdpLspFec: 1.3.6.1.4.1.2636.3.14.1.1
+jnxLdpRtrid: 1.3.6.1.4.1.2636.3.14.1.2
+jnxLdpLspDownReason: 1.3.6.1.4.1.2636.3.14.1.3
+jnxLdpSesDownReason: 1.3.6.1.4.1.2636.3.14.1.4
+jnxLdpSesDownIf: 1.3.6.1.4.1.2636.3.14.1.5
+jnxLdpLspFecLen: 1.3.6.1.4.1.2636.3.14.1.6
+jnxLdpSesUpIf: 1.3.6.1.4.1.2636.3.14.1.7
+jnxLdpInstanceName: 1.3.6.1.4.1.2636.3.14.1.8
+jnxLdpStatsTable: 1.3.6.1.4.1.2636.3.14.2
+jnxLdpStatsEntry: 1.3.6.1.4.1.2636.3.14.2.1
+jnxLdpInstanceId: 1.3.6.1.4.1.2636.3.14.2.1.1
+jnxLdpFecType: 1.3.6.1.4.1.2636.3.14.2.1.2
+jnxLdpFec: 1.3.6.1.4.1.2636.3.14.2.1.3
+jnxLdpFecLength: 1.3.6.1.4.1.2636.3.14.2.1.4
+jnxLdpFecStatisticsStatus: 1.3.6.1.4.1.2636.3.14.2.1.5
+jnxLdpIngressOctets: 1.3.6.1.4.1.2636.3.14.2.1.6
+jnxLdpIngressPackets: 1.3.6.1.4.1.2636.3.14.2.1.7
+jnxLdpTransitOctets: 1.3.6.1.4.1.2636.3.14.2.1.8
+jnxLdpTransitPackets: 1.3.6.1.4.1.2636.3.14.2.1.9
+jnxLdpTrapPrefix: 1.3.6.1.4.1.2636.4.4.0
+jnxLdpLspUp: 1.3.6.1.4.1.2636.4.4.0.1
+jnxLdpLspDown: 1.3.6.1.4.1.2636.4.4.0.2
+jnxLdpSesUp: 1.3.6.1.4.1.2636.4.4.0.3
+jnxLdpSesDown: 1.3.6.1.4.1.2636.4.4.0.4
+

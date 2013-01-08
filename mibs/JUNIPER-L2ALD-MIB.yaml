@@ -1,0 +1,19 @@
+---
+jnxl2aldMib: 1.3.6.1.4.1.2636.3.48.1
+jnxl2aldNotification: 1.3.6.1.4.1.2636.3.48.1.0
+jnxl2aldObjects: 1.3.6.1.4.1.2636.3.48.1.1
+jnxl2aldInterfaceTable: 1.3.6.1.4.1.2636.3.48.1.1.1
+jnxl2aldEntry: 1.3.6.1.4.1.2636.3.48.1.1.1.1
+jnxl2aldIntfLogicalRouter: 1.3.6.1.4.1.2636.3.48.1.1.1.1.1
+jnxl2aldIntfRoutingInst: 1.3.6.1.4.1.2636.3.48.1.1.1.1.2
+jnxl2aldIntfBridgeDomain: 1.3.6.1.4.1.2636.3.48.1.1.1.1.3
+jnxl2aldIntfMacLimit: 1.3.6.1.4.1.2636.3.48.1.1.1.1.4
+jnxl2aldRoutingInst: 1.3.6.1.4.1.2636.3.48.1.1.2
+jnxl2aldBridgeDomain: 1.3.6.1.4.1.2636.3.48.1.1.3
+jnxl2aldLogicalRouter: 1.3.6.1.4.1.2636.3.48.1.1.4
+jnxl2aldMacLimit: 1.3.6.1.4.1.2636.3.48.1.1.5
+jnxl2aldGbMacLimit: 1.3.6.1.4.1.2636.3.48.1.1.6
+jnxl2aldRoutingInstMacLimit: 1.3.6.1.4.1.2636.3.48.1.0.1
+jnxl2aldInterfaceMacLimit: 1.3.6.1.4.1.2636.3.48.1.0.2
+jnxl2aldGlobalMacLimit: 1.3.6.1.4.1.2636.3.48.1.0.3
+

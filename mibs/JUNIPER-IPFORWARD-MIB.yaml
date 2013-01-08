@@ -1,0 +1,9 @@
+---
+jnxIpForwardMIB: 1.3.6.1.4.1.2636.3.38
+jnxIpCidrRouteTable: 1.3.6.1.4.1.2636.3.38.1
+jnxIpCidrRouteEntry: 1.3.6.1.4.1.2636.3.38.1.1
+jnxIpCidrRouteTunnelName: 1.3.6.1.4.1.2636.3.38.1.1.1
+jnxInetCidrRouteTable: 1.3.6.1.4.1.2636.3.38.2
+jnxInetCidrRouteEntry: 1.3.6.1.4.1.2636.3.38.2.1
+jnxInetCidrRouteTunnelName: 1.3.6.1.4.1.2636.3.38.2.1.1
+

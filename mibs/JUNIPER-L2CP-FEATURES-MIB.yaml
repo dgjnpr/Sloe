@@ -1,0 +1,37 @@
+---
+jnxL2cpFeaturesMIB: 1.3.6.1.4.1.2636.3.53.1
+jnxL2cpObjects: 1.3.6.1.4.1.2636.3.53.1.1
+jnxL2cpStpProtectObjects: 1.3.6.1.4.1.2636.3.53.1.1.1
+jnxDot1dStpPortProtectTable: 1.3.6.1.4.1.2636.3.53.1.1.1.1
+jnxDot1dStpPortProtectEntry: 1.3.6.1.4.1.2636.3.53.1.1.1.1.1
+jnxDot1dStpPortRootProtectEnabled: 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.1
+jnxDot1dStpPortRootProtectState: 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.2
+jnxDot1dStpPortLoopProtectEnabled: 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.3
+jnxDot1dStpPortLoopProtectState: 1.3.6.1.4.1.2636.3.53.1.1.1.1.1.4
+jnxL2cpBpduProtectObjects: 1.3.6.1.4.1.2636.3.53.1.1.2
+jnxL2cpBpduProtectPortTable: 1.3.6.1.4.1.2636.3.53.1.1.2.1
+jnxL2cpBpduProtectPortEntry: 1.3.6.1.4.1.2636.3.53.1.1.2.1.1
+jnxL2cpBpduProtectPortEnabled: 1.3.6.1.4.1.2636.3.53.1.1.2.1.1.1
+jnxL2cpPortBpduError: 1.3.6.1.4.1.2636.3.53.1.1.2.1.1.2
+jnxL2cpBpduProtectDisableTimeout: 1.3.6.1.4.1.2636.3.53.1.1.2.2
+jnxLacpNotifyVars: 1.3.6.1.4.1.2636.3.53.1.1.3
+jnxLacpInterfaceName: 1.3.6.1.4.1.2636.3.53.1.1.3.1
+jnxLacpifIndex: 1.3.6.1.4.1.2636.3.53.1.1.3.2
+jnxLacpAggregateInterfaceName: 1.3.6.1.4.1.2636.3.53.1.1.3.3
+jnxLacpAggregateifIndex: 1.3.6.1.4.1.2636.3.53.1.1.3.4
+jnxLacpAggPortActorOperState: 1.3.6.1.4.1.2636.3.53.1.1.3.5
+jnxLacpAggTimeout: 1.3.6.1.4.1.2636.3.53.1.1.4
+dot3adAggPortTimeoutTable: 1.3.6.1.4.1.2636.3.53.1.1.4.1
+dot3adAggPortTimeoutEntry: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1
+dot3adInterfaceName: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.1
+dot3adOperState: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.2
+dot3adAggname: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.3
+dot3adInterfaceTimeout: 1.3.6.1.4.1.2636.3.53.1.1.4.1.1.4
+jnxL2cpNotifications: 1.3.6.1.4.1.2636.3.53.1.2
+jnxL2cpProtectTraps: 1.3.6.1.4.1.2636.3.53.1.2.0
+jnxLacpNotificationsPrefix: 1.3.6.1.4.1.2636.3.53.1.2.1
+jnxPortRootProtectStateChangeTrap: 1.3.6.1.4.1.2636.3.53.1.2.0.1
+jnxPortLoopProtectStateChangeTrap: 1.3.6.1.4.1.2636.3.53.1.2.0.2
+jnxPortBpduErrorStatusChangeTrap: 1.3.6.1.4.1.2636.3.53.1.2.0.3
+jnxLacpTimeOut: 1.3.6.1.4.1.2636.3.53.1.2.1.1
+

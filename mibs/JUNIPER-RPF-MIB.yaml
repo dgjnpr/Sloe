@@ -1,0 +1,10 @@
+---
+jnxRpf: 1.3.6.1.4.1.2636.3.17
+jnxRpfStats: 1.3.6.1.4.1.2636.3.17.1
+jnxRpfStatsTable: 1.3.6.1.4.1.2636.3.17.1.1
+jnxRpfStatsEntry: 1.3.6.1.4.1.2636.3.17.1.1.1
+jnxRpfStatsIfIndex: 1.3.6.1.4.1.2636.3.17.1.1.1.1
+jnxRpfStatsAddrFamily: 1.3.6.1.4.1.2636.3.17.1.1.1.2
+jnxRpfStatsPackets: 1.3.6.1.4.1.2636.3.17.1.1.1.3
+jnxRpfStatsBytes: 1.3.6.1.4.1.2636.3.17.1.1.1.4
+

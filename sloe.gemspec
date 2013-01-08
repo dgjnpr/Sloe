@@ -6,11 +6,17 @@ require 'sloe/version'
 Gem::Specification.new do |gem|
   gem.name          = "sloe"
   gem.version       = Sloe::VERSION
-  gem.authors       = ["TODO: Write your name"]
-  gem.email         = ["TODO: Write your email address"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.authors       = ["David Gethings"]
+  gem.email         = ["dgethings@juniper.net"]
+  gem.description   = %q{Sloe uses NETCONF and/or SNMP to gather data regarding a network device. Designed to help with automated testing this gem can also be used with things like Ruby on Rails}
+  gem.summary       = %q{A one stop shop for collecting data from a network device using NETCONF or SNMP}
   gem.homepage      = ""
+
+  gem.add_dependency('snmp')
+  gem.add_dependency('netconf')
+  gem.add_development_dependency('rspec')
+  gem.add_development_dependency('yard')
+  gem.add_development_dependency('ruby-debug19')
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

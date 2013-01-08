@@ -1,0 +1,31 @@
+---
+jnxLicenseMIB: 1.3.6.1.4.1.2636.3.63.1
+jnxLicenseNotifications: 1.3.6.1.4.1.2636.3.63.1.0
+jnxLicenseObjects: 1.3.6.1.4.1.2636.3.63.1.1
+jnxLicenseInstallObjects: 1.3.6.1.4.1.2636.3.63.1.1.1
+jnxLicenseInstallTable: 1.3.6.1.4.1.2636.3.63.1.1.1.1
+jnxLicenseInstallEntry: 1.3.6.1.4.1.2636.3.63.1.1.1.1.1
+jnxLicenseId: 1.3.6.1.4.1.2636.3.63.1.1.1.1.1.1
+jnxLicenseVersion: 1.3.6.1.4.1.2636.3.63.1.1.1.1.1.2
+jnxLicenseDeviceId: 1.3.6.1.4.1.2636.3.63.1.1.1.1.1.3
+jnxLicenseType: 1.3.6.1.4.1.2636.3.63.1.1.1.1.1.4
+jnxLicenseKeys: 1.3.6.1.4.1.2636.3.63.1.1.1.1.1.5
+jnxLicenseFeatureListTable: 1.3.6.1.4.1.2636.3.63.1.1.1.2
+jnxLicenseFeatureListEntry: 1.3.6.1.4.1.2636.3.63.1.1.1.2.1
+jnxLicenseFeatureId: 1.3.6.1.4.1.2636.3.63.1.1.1.2.1.1
+jnxLicenseFeatureName: 1.3.6.1.4.1.2636.3.63.1.1.1.2.1.2
+jnxLicenseFeatureDescr: 1.3.6.1.4.1.2636.3.63.1.1.1.2.1.3
+jnxLicenseFeatureLicenseId: 1.3.6.1.4.1.2636.3.63.1.1.1.2.1.4
+jnxLicenseFeatureLicenseUsed: 1.3.6.1.4.1.2636.3.63.1.1.1.2.1.5
+jnxLicenseFeatureLicenseInstalled: 1.3.6.1.4.1.2636.3.63.1.1.1.2.1.6
+jnxLicenseFeatureLicenseNeeded: 1.3.6.1.4.1.2636.3.63.1.1.1.2.1.7
+jnxLicenseSettings: 1.3.6.1.4.1.2636.3.63.1.1.2
+jnxLicenseRenewBeforExpiration: 1.3.6.1.4.1.2636.3.63.1.1.2.1
+jnxLicenseRenewInterval: 1.3.6.1.4.1.2636.3.63.1.1.2.2
+jnxLicenseAutoUpdate: 1.3.6.1.4.1.2636.3.63.1.1.2.3
+jnxLicenseGraceExpired: 1.3.6.1.4.1.2636.3.63.1.0.1
+jnxLicenseGraceAboutToExpire: 1.3.6.1.4.1.2636.3.63.1.0.2
+jnxLicenseAboutToExpire: 1.3.6.1.4.1.2636.3.63.1.0.3
+jnxLicenseInfringeCumulative: 1.3.6.1.4.1.2636.3.63.1.0.4
+jnxLicenseInfringeSingle: 1.3.6.1.4.1.2636.3.63.1.0.5
+

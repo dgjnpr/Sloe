@@ -1,0 +1,28 @@
+---
+jnxFirewalls: 1.3.6.1.4.1.2636.3.5
+jnxFirewallsTable: 1.3.6.1.4.1.2636.3.5.1
+jnxFirewallsEntry: 1.3.6.1.4.1.2636.3.5.1.1
+jnxFWFilter: 1.3.6.1.4.1.2636.3.5.1.1.1
+jnxFWCounter: 1.3.6.1.4.1.2636.3.5.1.1.2
+jnxFWType: 1.3.6.1.4.1.2636.3.5.1.1.3
+jnxFWPackets: 1.3.6.1.4.1.2636.3.5.1.1.4
+jnxFWBytes: 1.3.6.1.4.1.2636.3.5.1.1.5
+jnxFirewallCounterTable: 1.3.6.1.4.1.2636.3.5.2
+jnxFirewallCounterEntry: 1.3.6.1.4.1.2636.3.5.2.1
+jnxFWCounterFilterName: 1.3.6.1.4.1.2636.3.5.2.1.1
+jnxFWCounterName: 1.3.6.1.4.1.2636.3.5.2.1.2
+jnxFWCounterType: 1.3.6.1.4.1.2636.3.5.2.1.3
+jnxFWCounterPacketCount: 1.3.6.1.4.1.2636.3.5.2.1.4
+jnxFWCounterByteCount: 1.3.6.1.4.1.2636.3.5.2.1.5
+jnxFWCounterDisplayFilterName: 1.3.6.1.4.1.2636.3.5.2.1.6
+jnxFWCounterDisplayName: 1.3.6.1.4.1.2636.3.5.2.1.7
+jnxFWCounterDisplayType: 1.3.6.1.4.1.2636.3.5.2.1.8
+jnxFWCntrXTable: 1.3.6.1.4.1.2636.3.5.3
+jnxFWCntrXEntry: 1.3.6.1.4.1.2636.3.5.3.1
+jnxFWCntrPolicerOfferedPktCount: 1.3.6.1.4.1.2636.3.5.3.1.1
+jnxFWCntrPolicerOfferedByteCount: 1.3.6.1.4.1.2636.3.5.3.1.2
+jnxFWCntrPolicerOutSpecPktCount: 1.3.6.1.4.1.2636.3.5.3.1.3
+jnxFWCntrPolicerOutSpecByteCount: 1.3.6.1.4.1.2636.3.5.3.1.4
+jnxFWCntrPolicerTxPktCount: 1.3.6.1.4.1.2636.3.5.3.1.5
+jnxFWCntrPolicerTxByteCount: 1.3.6.1.4.1.2636.3.5.3.1.6
+

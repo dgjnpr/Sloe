@@ -1,0 +1,12 @@
+---
+jnxEvent: 1.3.6.1.4.1.2636.3.37
+jnxEventNotifyVars: 1.3.6.1.4.1.2636.3.37.1
+jnxEventTrapDescr: 1.3.6.1.4.1.2636.3.37.1.1
+jnxEventAvTable: 1.3.6.1.4.1.2636.3.37.1.2
+jnxEventAvEntry: 1.3.6.1.4.1.2636.3.37.1.2.1
+jnxEventAvIndex: 1.3.6.1.4.1.2636.3.37.1.2.1.1
+jnxEventAvAttribute: 1.3.6.1.4.1.2636.3.37.1.2.1.2
+jnxEventAvValue: 1.3.6.1.4.1.2636.3.37.1.2.1.3
+jnxEventNotificationPrefix: 1.3.6.1.4.1.2636.4.13.0
+jnxEventTrap: 1.3.6.1.4.1.2636.4.13.0.1
+
