@@ -18,6 +18,10 @@ Or install it yourself as:
 
 ## Usage
 
+This gem augments the functionality of Netconf::SSH and SNMP gems. Please refer to those gem's documentation or detailed instruction on how to use this gem.
+
+All SNMP methods are accessed via the snmp() method. 
+
     require 'sloe'
 
     # create options hash
@@ -33,8 +37,10 @@ Or install it yourself as:
       puts "Chassis: " + inventory.xpath('chassis/description').text
 
       # display SNMP data
-      puts device.snmp_get('sysDescr.0')
+      puts device.snmp.get_value('sysDescr.0')
     } 
+
+All options supported by Netconf and SNMP are supported in this gem too. The :target option is aliased to the SNMP :host option so there is no need to duplicate that option key.
 
 ## SUPPORT
 

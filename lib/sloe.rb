@@ -1,5 +1,6 @@
 require 'sloe/version'
 require 'net/netconf'
+require 'net/scp'
 require 'snmp'
 
 
