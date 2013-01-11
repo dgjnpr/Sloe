@@ -64,5 +64,4 @@ describe Sloe do
       File.delete('/var/tmp/test')
     end
   end
-
 end
