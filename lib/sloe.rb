@@ -9,14 +9,18 @@ module Sloe
 
 		attr_reader :snmp
 
-	  def initialize(args)
-	    super(args)
-	    self.open
-
-	    @snmp_args = {:host => args[:target], :mib_dir => args[:mib_dir], :mib_modules => args[:mib_modules]}
+	  def initialize(args, &block)
+	  	@snmp_args = {:host => args[:target], :mib_dir => args[:mib_dir], :mib_modules => args[:mib_modules]}
       @snmp = SNMP::Manager.new(@snmp_args)
-	    
-      self
+			
+	  	if block_given?
+	  		super( args, &block )
+	  		return
+	  	else
+		  	super(args)
+		    self.open
+		    self
+	  	end
 	  end
 	end
 end
