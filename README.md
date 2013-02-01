@@ -18,19 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-This gem augments the functionality of Netconf::SSH and SNMP gems. Please refer to those gem's documentation or detailed instruction on how to use this gem.
+This gem augments the functionality of Netconf::SSH, Net::SCP and SNMP gems. Please refer to those gem's documentation or detailed instruction on how to use this gem.
 
-All SNMP methods are accessed via the snmp() method. 
+All Netconf methods are accessed via the rpc() method. All Net::SCP methods are access via the scp() method. All SNMP methods are accessed via the snmp() method. For example:
 
     require 'sloe'
 
     # create options hash
-
     options = {:target => 'remotehost', :username => 'foo', :password => 'bar'}
 
     Sloe::Device.new(options) { |device|
-      # establish connection to device
-      device.open
 
       # call a Netconf RPC and display some of output
       inventory = device.rpc.get_chassis_inventory
@@ -40,7 +37,24 @@ All SNMP methods are accessed via the snmp() method.
       puts device.snmp.get_value('sysDescr.0')
     } 
 
-All options supported by Netconf and SNMP are supported in this gem too. The :target option is aliased to the SNMP :host option so there is no need to duplicate that option key.
+An alternate way to use this module is:
+
+    require 'sloe'
+
+    # create options hash
+    options = {:target => 'remotehost', :username => 'foo', :password => 'bar'}
+
+    device = Sloe::Device.new(options)
+
+    # call a Netconf RPC and display some of output
+    inventory = device.rpc.get_chassis_inventory
+    puts "Chassis: " + inventory.xpath('chassis/description').text
+
+    # display SNMP data
+    puts device.snmp.get_value('sysDescr.0')
+    
+
+All options supported by Netconf, Net::SCP and SNMP are supported in this gem too. The :target option is aliased to the SNMP :host option so there is no need to duplicate that option key.
 
 ## SUPPORT
 
