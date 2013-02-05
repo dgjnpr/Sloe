@@ -1,4 +1,5 @@
 require 'sloe'
+require 'sloe/junos'
 require 'ruby-debug'
 
 describe Sloe do
@@ -25,6 +26,12 @@ describe Sloe do
         @hostname = dut.snmp.get_value( 'sysName.0' ).to_s
       }
       @hostname.should include @login[:target]
+    end
+
+    it "responds to Junos specific RPCs" do
+      Sloe::Junos.new ( @login ) { |dut|
+        dut.rpc.responds_to?(:lock_configuration).should be true
+      }
     end
   end
 end
