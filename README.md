@@ -56,6 +56,15 @@ An alternate way to use this module is:
 
 All options supported by Netconf, Net::SCP and SNMP are supported in this gem too. The :target option is aliased to the SNMP :host option so there is no need to duplicate that option key.
 
+## Vendor specific Netconf extensions
+
+Sloe supports vendor specific Netconf extensions. To add that vendor specific support call new() on one of the supported classes. Sloe supports the following:
+
+*Sloe::Device - no vendor specific Netconf extensions added
+*Sloe::Junos - Junos vendor specific Netconf extensions added
+
+Just simply call Sloe::Junos.new() to get the Junos extensions added
+
 ## SUPPORT
 
 This software is not officially supported by Juniper Networks, but by a team dedicated to helping customers, partners, and the development community.  To report bug-fixes, issues, susggestions, please contact David Gethings <dgethings@juniper.net>
