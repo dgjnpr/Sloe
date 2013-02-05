@@ -20,7 +20,7 @@ Or install it yourself as:
 
 This gem augments the functionality of Netconf::SSH, Net::SCP and SNMP gems. Please refer to those gem's documentation or detailed instruction on how to use this gem.
 
-All Netconf methods are accessed via the rpc() method. All Net::SCP methods are access via the scp() method. All SNMP methods are accessed via the snmp() method. For example:
+All Netconf methods are accessed via the `rpc()` method. All Net::SCP methods are access via the `scp()` method. All SNMP methods are accessed via the `snmp()` method. For example:
 
     require 'sloe'
 
@@ -54,16 +54,30 @@ An alternate way to use this module is:
     puts device.snmp.get_value('sysDescr.0')
     
 
-All options supported by Netconf, Net::SCP and SNMP are supported in this gem too. The :target option is aliased to the SNMP :host option so there is no need to duplicate that option key.
+All options supported by Netconf, Net::SCP and SNMP are supported in this gem too. The `:target` Netconf::SSH option is aliased to the SNMP `:host` option so there is no need to duplicate that option key.
 
 ## Vendor specific Netconf extensions
 
-Sloe supports vendor specific Netconf extensions. To add that vendor specific support call new() on one of the supported classes. Sloe supports the following:
+Sloe supports vendor specific Netconf extensions. To add that vendor specific support call `new()` on one of the supported classes. Sloe supports the following:
 
 *Sloe::Device - no vendor specific Netconf extensions added
 *Sloe::Junos - Junos vendor specific Netconf extensions added
 
-Just simply call Sloe::Junos.new() to get the Junos extensions added
+Just simply call `Sloe::Junos.new()` to get the Junos extensions added
+
+### Junos specific extension
+
+For Junos specific Netconf extensions please refer to the [Juniper webiste](http://www.juniper.net/techpubs/en_US/junos12.3/information-products/topic-collections/netconf-guide/index.html)
+
+As well as supporting Junos specific Netconf RPCs Sloe::Junos also supports the `cli()` method. This method allows you to execute CLI commands on the Juniper device. For example
+
+    device.cli("show version")
+    device.cli("show ospf interfaces")
+
+By default this call will respond with an XML result tree fragment, a Nokogiri::XML object. To get what you would see on the CLI modify the `cli()` call with the `:format => 'text'` attribute and chain the Nokogiri `text()` method. Here is an example that will return just the output from "show version"
+
+    device.cli("show version", :format => 'text').text
+
 
 ## SUPPORT
 

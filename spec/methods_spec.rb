@@ -13,7 +13,7 @@ describe Sloe do
       :mib_modules => ["SNMPv2-SMI", "SNMPv2-MIB", "IF-MIB", "IP-MIB", "TCP-MIB", "UDP-MIB"].concat(@jnx_mibs)
     }
 
-    @dut = Sloe::Device.new(@args)
+    @dut = Sloe::Junos.new(@args)
   end
 
   context "SNMP API" do
@@ -62,6 +62,15 @@ describe Sloe do
       lambda { @dut.scp.upload!('/var/tmp/test', 'test') }.should_not raise_error
       @dut.rpc.file_delete(:path => 'test')
       File.delete('/var/tmp/test')
+    end
+  end
+
+  context "CLI API" do
+    it "cli.('show version') functions without error" do
+      lambda { @dut.cli("show version") }.should_not raise_error
+    end
+    it "cli.('show version') contains OS information" do
+      @dut.cli("show version").text.should =~ /JUNOS Base OS/
     end
   end
 end
