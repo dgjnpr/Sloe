@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/dgjnpr/Sloe"
 
   gem.add_dependency('snmp', '>= 1.1.0')
-  gem.add_dependency('netconf', '>= 0.2.4')
+  gem.add_dependency('netconf', '>= 0.2.5')
   gem.add_dependency('net-scp', '>= 1.0.4')
   gem.add_development_dependency('rspec', '>= 2.12.0')
   gem.add_development_dependency('yard')
