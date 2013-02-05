@@ -1,5 +1,6 @@
 require 'sloe'
-require 'ruby-debug'
+require 'sloe/junos'
+# require 'ruby-debug'
 
 describe Sloe do
   context "invoked with block" do
@@ -26,5 +27,28 @@ describe Sloe do
       }
       @hostname.should include @login[:target]
     end
+
+  end
+
+  context "Junos extensions" do
+    before(:all) do
+      @login = {
+        :target => 'capella',
+        :username => 'dgethings',
+        :password => 'mcisamilf'
+      }
+    end
+
+    it "Sloe::Junos responds to Junos specific RPCs" do
+      Sloe::Junos.new ( @login ) { |dut|
+        dut.rpc.respond_to?(:lock_configuration).should be true
+      }
+    end
+    it "Sloe::Device does not respond to Junos specific RPCs" do
+      Sloe::Device.new ( @login ) { |dut|
+        dut.rpc.respond_to?(:lock_configuration).should be false
+      }
+    end
+
   end
 end
