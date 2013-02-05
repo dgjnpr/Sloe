@@ -61,6 +61,7 @@ All options supported by Netconf, Net::SCP and SNMP are supported in this gem to
 Sloe supports vendor specific Netconf extensions. To add that vendor specific support call `new()` on one of the supported classes. Sloe supports the following:
 
 *Sloe::Device - no vendor specific Netconf extensions added
+
 *Sloe::Junos - Junos vendor specific Netconf extensions added
 
 Just simply call `Sloe::Junos.new()` to get the Junos extensions added
