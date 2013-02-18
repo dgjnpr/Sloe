@@ -75,10 +75,7 @@ As well as supporting Junos specific Netconf RPCs Sloe::Junos also supports the 
     device.cli("show version")
     device.cli("show ospf interfaces")
 
-By default this call will respond with an XML result tree fragment, a Nokogiri::XML object. To get what you would see on the CLI modify the `cli()` call with the `:format => 'text'` attribute and chain the Nokogiri `text()` method. Here is an example that will return just the output from "show version"
-
-    device.cli("show version", :format => 'text').text
-
+By default this call will respond with a string. This should make this call compatable with existing automation scripts that are based on CLI commands. To get an XML result tree fragment use the rpc.command() API.
 
 ## SUPPORT
 

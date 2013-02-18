@@ -7,8 +7,8 @@ describe Sloe do
     before(:all) do
       @login = {
         :target => 'capella',
-        :username => 'dgethings',
-        :password => 'mcisamilf'
+        :username => 'netconf',
+        :password => 'netconf'
       }
       @hostname = ''
     end
@@ -34,8 +34,8 @@ describe Sloe do
     before(:all) do
       @login = {
         :target => 'capella',
-        :username => 'dgethings',
-        :password => 'mcisamilf'
+        :username => 'netconf',
+        :password => 'netconf'
       }
     end
 
