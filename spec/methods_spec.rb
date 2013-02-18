@@ -66,14 +66,14 @@ describe Sloe do
   end
 
   context "CLI API" do
-    it "cli.('show version') functions without error" do
+    it "cli('show version') functions without error" do
       lambda { @dut.cli("show version") }.should_not raise_error
     end
-    it "cli.('show version') contains OS information" do
+    it "cli('show version') contains OS information" do
       @dut.cli("show version").should be_a(String)      
       @dut.cli("show version").should =~ /JUNOS Base OS/
     end
-    it "cli.('show version', :foo => 'bar') still contains OS information" do
+    it "cli('show version', :foo => 'bar') still contains OS information" do
       @dut.cli("show version", :foo => 'bar').should be_a(String)
       @dut.cli("show version", :foo => 'bar').should =~ /JUNOS Base OS/
     end
