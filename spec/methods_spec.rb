@@ -7,8 +7,8 @@ describe Sloe do
     @jnx_mibs = Dir.glob("./mibs/JUNIPER-*.yaml").map { |f| File.basename(f, '.yaml') }
     @args = {
       :target => 'capella',
-      :username => 'dgethings',
-      :password => 'mcisamilf',
+      :username => 'netconf',
+      :password => 'netconf',
       :mib_dir => './mibs',
       :mib_modules => ["SNMPv2-SMI", "SNMPv2-MIB", "IF-MIB", "IP-MIB", "TCP-MIB", "UDP-MIB"].concat(@jnx_mibs)
     }
@@ -70,7 +70,7 @@ describe Sloe do
       lambda { @dut.cli("show version") }.should_not raise_error
     end
     it "cli.('show version') contains OS information" do
-      @dut.cli("show version").text.should =~ /JUNOS Base OS/
+      @dut.cli("show version").should =~ /JUNOS Base OS/
     end
   end
 end

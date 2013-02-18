@@ -9,7 +9,7 @@ module Sloe
     end
 
     def cli(cmd_str, attrs = nil)
-      self.rpc.command(cmd_str, attrs)
+      self.rpc.command(cmd_str, attrs).text
     end
   end
 end
