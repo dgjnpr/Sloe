@@ -8,7 +8,8 @@ module Sloe
         super( args, &block )
     end
 
-    def cli(cmd_str, attrs = nil)
+    def cli(cmd_str, attrs = { :format => 'text' })
+      attrs[:format] ||= 'text'
       self.rpc.command(cmd_str, attrs).text
     end
   end
