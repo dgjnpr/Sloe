@@ -6,7 +6,8 @@ module Sloe
 
     def initialize(args, &block)
 
-      # Stop netconf gem from defaulting to :Junos and thus not loading :Junos extensions
+      # Stop netconf gem from defaulting to :Junos and thus 
+      # not loading :Junos extensions
       args[:os_type] = :Netconf
       super( args, &block )
     end
