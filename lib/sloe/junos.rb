@@ -10,7 +10,8 @@ module Sloe
 
     def cli(cmd_str, attrs = { :format => 'text' })
       attrs[:format] ||= 'text'
-      self.rpc.command(cmd_str, attrs).text
+      reply = self.rpc.command(cmd_str, attrs)
+      reply.respond_to?(:text) ? reply.text : reply
     end
   end
 end

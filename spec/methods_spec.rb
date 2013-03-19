@@ -77,5 +77,8 @@ describe Sloe do
       @dut.cli("show version", :foo => 'bar').should be_a(String)
       @dut.cli("show version", :foo => 'bar').should =~ /JUNOS Base OS/
     end
+    it "cli('clear interface statistics') empty reply does not cause an error" do
+      lambda { @dut.cli('clear interface statistics fxp0') }.should_not raise_error
+    end
   end
 end
