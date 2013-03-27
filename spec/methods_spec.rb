@@ -81,4 +81,28 @@ describe Sloe do
       lambda { @dut.cli('clear interface statistics fxp0') }.should_not raise_error
     end
   end
+
+  context "Helper methods" do
+    before( :all ) do
+      Dir.mkdir( 'configs' )
+      @apply = File.open( "configs/capella-apply.set", "w" )
+      @apply.write( 'set system location building "In a galaxy far, far, away"' )
+      @apply.close
+
+      @delete = File.open( "configs/capella-delete.set", "w" )
+      @delete.write( 'delete system location')
+      @delete.close
+    end
+
+    it "setup() with default args updates the router config" do
+      lambda { @dut.setup() }.should_not raise_error
+    end
+    it "clearup() with default args updates the router config" do
+      lambda { @dut.clearup() }.should_not raise_error
+    end
+
+    after(:all) do
+      FileUtils.rm_rf( 'configs' )
+    end
+  end
 end
