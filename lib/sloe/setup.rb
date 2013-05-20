@@ -24,10 +24,10 @@ module Sloe
 
 
       Dir.glob( "#{@topology}/*.yaml" ) do |yaml_file|
-        debugger
         @hostname = File.basename yaml_file, '.yaml'
         @junos = Dir.glob( "#{@topology}/#{@hostname}*.junos" )
 
+        debugger
         self.setup( yaml_file, @junos )
       end
     end
