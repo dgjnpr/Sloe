@@ -6,6 +6,8 @@ module Sloe
   class Setup
     include Celluloid
 
+    attr_reader netconf, hostname, state
+
     def initialize( topology )
       raise Errno::ENOENT unless Dir.exists?( topology )
       @topology = topology
@@ -33,18 +35,17 @@ module Sloe
           :password => 'netconf'
         }
 
-        @routers.push({
-          :host    => @hostname,
-          :session => Netconf::SSH.new( @login ),
-          :state   => :INCOMPLETE
-        })
+        @netconf = Netconf::SSH.new( @login )
+        @state   = :INCOMPLETE
+
+        @routers.push( self )
       end
     end
 
     def setup
       # debugger
       @routers.each do |r|
-        r[:session].async._setup
+        r.async._setup
       end
     end
 
