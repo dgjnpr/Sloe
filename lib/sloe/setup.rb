@@ -1,5 +1,6 @@
 require 'celluloid'
 require 'net/netconf'
+require 'debugger'
 
 module Sloe
   class Setup
@@ -41,6 +42,7 @@ module Sloe
     end
 
     def setup
+      debugger
       @routers.each do |r|
         r.async._setup
       end
