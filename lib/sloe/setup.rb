@@ -134,7 +134,7 @@ module Sloe
         @params.each do |tmpl|
           raise Errno::ENOENT unless File.exists?( "#{@location['template']}/#{tmpl['template']}" )
           @erb = ERB.new( File.read( "#{@location['template']}/#{tmpl['template']}" ) )
-          c = OpenStruct.new( yaml )
+          c = OpenStruct.new( tmpl )
           @config << @erb.result( c.send( :binding ) )
         end
         @config
