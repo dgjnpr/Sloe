@@ -6,7 +6,7 @@ module Sloe
   class Setup
     include Celluloid
 
-    attr_reader netconf, hostname, state
+    attr_reader :netconf, :hostname, :state
 
     def initialize( topology )
       raise Errno::ENOENT unless Dir.exists?( topology )
