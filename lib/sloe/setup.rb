@@ -30,7 +30,7 @@ module Sloe
       end
     end
 
-    def setup( @yaml, @junos )
+    def setup( yaml, junos )
       # debugger
       @login = {
         :target   => @hostname,
@@ -55,13 +55,13 @@ module Sloe
       @config.shift
       @config.shift
 
-      @junos.each do |file|
+      junos.each do |file|
         @ver = File.read( file )
         _upgrade_junos( @ver )
       end
 
       @config.push ({
-        :config => _generate_config( @yaml ),
+        :config => _generate_config( yaml ),
         :attrs  => { :format => 'text', :action => 'merge' }
       })
       _apply_config( @config )
