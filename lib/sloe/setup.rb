@@ -127,7 +127,6 @@ module Sloe
       end
 
       def _generate_config( yaml )
-        debugger
         @params = YAML.load_file( yaml )
         raise Errno::ENOENT unless File.exists?( "#{@location['template']}/#{@params['template']}" )
         @erb = ERB.new( File.read( "#{@location['template']}/#{@params['template']}" ) )
