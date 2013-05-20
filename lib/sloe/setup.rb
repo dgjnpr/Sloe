@@ -128,7 +128,7 @@ module Sloe
 
       def _generate_config( yaml )
         @params = YAML.load_file( yaml )
-        raise Errno::ENOENT unless File.exists?( "#{@location['template']}/#{@params['template']}" )
+        # raise Errno::ENOENT unless File.exists?( "#{@location['template']}/#{@params['template']}" )
         @erb = ERB.new( File.read( "#{@location['template']}/#{@params['template']}" ) )
         c = OpenStruct.new( yaml )
 
