@@ -129,6 +129,7 @@ module Sloe
 
       def _generate_config( yaml )
         @params = YAML.load_file( yaml )
+        raise Errno::ENOENT unless File.exists?( "#{@topology_location['template']}/#{@params['template']}" )
         @erb = ERB.new( File.read( "#{@topology_location['template']}/#{@params['template']}" ) )
         c = OpenStruct.new( yaml )
 
