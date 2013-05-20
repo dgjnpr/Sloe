@@ -59,7 +59,7 @@ module Sloe
       @state == :COMPLETE ? true : false
     end
 
-    private
+    # private
       def _setup
         @lab = File.read( "#{@location['template']}/lab/lab.conf" )
         @config = []
