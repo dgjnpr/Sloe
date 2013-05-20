@@ -130,7 +130,7 @@ module Sloe
         debugger
         @config = ''
         @params = YAML.load_file( yaml )
-        @params.each |tmpl|
+        @params.each do |tmpl|
           raise Errno::ENOENT unless File.exists?( "#{@location['template']}/#{tmpl['template']}" )
           @erb = ERB.new( File.read( "#{@location['template']}/#{tmpl['template']}" ) )
           c = OpenStruct.new( yaml )
