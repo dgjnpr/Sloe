@@ -42,7 +42,10 @@ module Sloe
 
       @lab = File.read( "#{@location['template']}/lab/lab.conf" )
       @config = []
-      @config.push({:config => @lab, :attrs => {:format => 'text', :action => 'merge'} })
+      @config.push({
+        :config => @lab, 
+        :attrs => {:format => 'text', :action => 'merge'} 
+      })
 
       @netconf.open unless @netconf.state == :NETCONF_OPEN
 
@@ -53,18 +56,16 @@ module Sloe
         :attrs => { :format => 'text', :action => 'override' }
       })
       _apply_config( @config )
-      @config.shift
-      @config.shift
 
       junos.each do |file|
         @ver = File.read( file )
         _upgrade_junos( @ver )
       end
 
-      @config.push ({
+      @config = [{
         :config => _generate_config( yaml ),
         :attrs  => { :format => 'text', :action => 'merge' }
-      })
+      }]
       _apply_config( @config )
       @netconf.close
 
