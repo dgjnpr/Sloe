@@ -4,7 +4,6 @@ require 'debugger'
 
 module Sloe
   class Setup
-    include Celluloid
 
     attr_reader :netconf, :hostname, :state
 
@@ -43,19 +42,20 @@ module Sloe
     end
 
     def setup
-      debugger
+      # debugger
       @routers.each do |r|
         r.async._setup
       end
+      @state = :COMPLETE
     end
 
     def complete
-      @all_state = 0
-      while @all_state < @routers.length do
-        @all_state = 0
-        @routers.each { |r| @all_state += 1 if r.state == :COMPLETE }
-      end
-      true
+      # @all_state = 0
+      # while @all_state < @routers.length do
+      #   @all_state = 0
+      #   @routers.each { |r| @all_state += 1 if r.state == :COMPLETE }
+      # end
+      @state == :COMPLETE ? true : false
     end
 
     private
