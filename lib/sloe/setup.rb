@@ -26,7 +26,7 @@ module Sloe
         @hostname = File.basename yaml_file, '.yaml'
         @junos = Dir.glob( "#{@topology}/#{@hostname}*.junos" )
 
-        self.setup ( yaml_file, @junos )
+        self.setup( yaml_file, @junos )
       end
     end
 
@@ -46,7 +46,7 @@ module Sloe
 
       @netconf.open unless @netconf.state == :NETCONF_OPEN
 
-      @specific = File.read( "#{@location['template']}/lab/#{self.hostname}.conf" )
+      @specific = File.read( "#{@location['template']}/lab/#{@hostname}.conf" )
       @config.unshift({
         :config => @specific, 
         :attrs => { :format => 'text', :action => 'override' }
@@ -61,7 +61,7 @@ module Sloe
       end
 
       @config.push ({
-        :config => _generate_config( "#{@location['template']}/#{self.hostname}.yaml" ),
+        :config => _generate_config( @yaml ),
         :attrs  => { :format => 'text', :action => 'merge' }
       })
       _apply_config( @config )
