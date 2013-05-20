@@ -31,7 +31,6 @@ module Sloe
     end
 
     def setup( yaml, junos )
-      # debugger
       @login = {
         :target   => @hostname,
         :username => 'netconf',
@@ -128,6 +127,7 @@ module Sloe
       end
 
       def _generate_config( yaml )
+        debugger
         @params = YAML.load_file( yaml )
         raise Errno::ENOENT unless File.exists?( "#{@topology_location['template']}/#{@params['template']}" )
         @erb = ERB.new( File.read( "#{@topology_location['template']}/#{@params['template']}" ) )
