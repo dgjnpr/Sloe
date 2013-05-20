@@ -1,4 +1,5 @@
 require 'celluloid'
+require 'net/netconf'
 
 module Sloe
   class Setup
