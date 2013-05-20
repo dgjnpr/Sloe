@@ -74,17 +74,18 @@ module Sloe
         })
         _apply_config( @config )
         @config.shift
+        @config.shift
 
         if File.exist?( "#{@location['template']}/#{self.hostname}-re0.junos" )
           @ver = File.read( "#{@location['template']}/#{self.hostname}-re0.junos" ).chomp
           _upgrade_junos( @ver )
         end
 
-        @tmpl = {
+        @config.push ({
           :config => _generate_config( "#{@location['template']}/#{self.hostname}.yaml" ),
           :attrs  => { :format => 'text', :action => 'merge' }
-        }
-        _apply_config( @tmpl )
+        })
+        _apply_config( @config )
         self.netconf.close
         @state = :COMPLETE
       end
