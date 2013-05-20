@@ -6,7 +6,10 @@ describe Sloe::Setup do
       @setup = Sloe::Setup.new( './test/topo1' )
       @setup.complete?.should be true
     end
-    it "to muliple devices" 
+    it "to muliple devices" do
+      @setup = Sloe::Setup.new( './test/topo2' )
+      @setup.complete?.should be true
+    end
   end
 
   context "Apply new Junos version" do
