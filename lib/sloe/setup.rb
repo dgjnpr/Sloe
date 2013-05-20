@@ -5,6 +5,7 @@ module Sloe
     include Celluloid
 
     def initialize( topology )
+      raise Errno::ENOENT unless Dir.exists?( topology )
       @topology = topology
       @routers = []
 
