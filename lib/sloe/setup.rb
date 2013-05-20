@@ -5,6 +5,7 @@ require 'debugger'
 
 module Sloe
   class Setup
+    include Celluloid
 
     def initialize( topology )
       raise Errno::ENOENT unless Dir.exists?( topology )
@@ -28,7 +29,7 @@ module Sloe
         @hostname = File.basename yaml_file, '.yaml'
         @junos = Dir.glob( "#{@topology}/#{@hostname}*.junos" )
 
-        self.setup( yaml_file, @junos )
+        self.async.setup( yaml_file, @junos )
       end
 
       @complete = true
