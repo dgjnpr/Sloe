@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency('celluloid', '>=0.14.0')
   gem.add_development_dependency('rspec', '>= 2.12.0')
   gem.add_development_dependency('yard')
-  # gem.add_development_dependency('ruby-debug19', '>= 0.11.6')
+  gem.add_development_dependency('debugger', '>= 1.6.0')
   gem.add_development_dependency('autotest-fsevent')
   gem.add_development_dependency('RedGreen')
   gem.add_development_dependency('ZenTest')
