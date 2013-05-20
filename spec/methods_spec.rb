@@ -1,5 +1,4 @@
 require 'sloe'
-require 'ruby-debug'
 
 describe Sloe do
 

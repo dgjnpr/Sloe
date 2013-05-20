@@ -15,9 +15,13 @@ Gem::Specification.new do |gem|
   gem.add_dependency('snmp', '>= 1.1.0')
   gem.add_dependency('netconf', '>= 0.2.5')
   gem.add_dependency('net-scp', '>= 1.0.4')
+  gem.add_dependency('celluloid', '>=0.14.0')
   gem.add_development_dependency('rspec', '>= 2.12.0')
   gem.add_development_dependency('yard')
   gem.add_development_dependency('ruby-debug19', '>= 0.11.6')
+  gem.add_development_dependency('autotest-fsevent')
+  gem.add_development_dependency('RedGreen')
+  gem.add_development_dependency('ZenTest')
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

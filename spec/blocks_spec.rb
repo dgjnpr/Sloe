@@ -1,6 +1,5 @@
 require 'sloe'
 require 'sloe/junos'
-# require 'ruby-debug'
 
 describe Sloe do
   context "invoked with block" do
