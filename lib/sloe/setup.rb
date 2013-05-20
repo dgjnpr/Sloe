@@ -128,12 +128,15 @@ module Sloe
 
       def _generate_config( yaml )
         debugger
+        @config = ''
         @params = YAML.load_file( yaml )
-        raise Errno::ENOENT unless File.exists?( "#{@location['template']}/#{@params['template']}" )
-        @erb = ERB.new( File.read( "#{@location['template']}/#{@params['template']}" ) )
-        c = OpenStruct.new( yaml )
-
-        @erb.result( c.send( :binding ) )
+        @params.each |tmpl|
+          raise Errno::ENOENT unless File.exists?( "#{@location['template']}/#{tmpl['template']}" )
+          @erb = ERB.new( File.read( "#{@location['template']}/#{tmpl['template']}" ) )
+          c = OpenStruct.new( yaml )
+          @config << @erb.result( c.send( :binding ) )
+        end
+        @config
       end
   end
 end
