@@ -128,7 +128,6 @@ module Sloe
       end
 
       def _generate_config( yaml )
-        debugger
         @config = ''
         @params = YAML.load_file( yaml )
         @params.each do |tmpl|
