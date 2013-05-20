@@ -46,6 +46,7 @@ module Sloe
 
       @netconf.open unless @netconf.state == :NETCONF_OPEN
 
+      debugger
       @specific = File.read( "#{@location['template']}/lab/#{@hostname}.conf" )
       @config.unshift({
         :config => @specific, 
