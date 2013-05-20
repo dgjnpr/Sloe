@@ -1,5 +1,6 @@
 require 'celluloid'
 require 'net/netconf/jnpr'
+require 'ostruct'
 require 'debugger'
 
 module Sloe
