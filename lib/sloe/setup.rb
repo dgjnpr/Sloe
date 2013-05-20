@@ -44,7 +44,8 @@ module Sloe
     def setup
       # debugger
       @routers.each do |r|
-        r.async._setup
+        # r.async._setup
+        r._setup
       end
       @state = :COMPLETE
     end
