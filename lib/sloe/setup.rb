@@ -42,9 +42,9 @@ module Sloe
     end
 
     def setup
-      debugger
+      # debugger
       @routers.each do |r|
-        r.async._setup
+        r[:session].async._setup
       end
     end
 
