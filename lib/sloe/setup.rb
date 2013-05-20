@@ -6,10 +6,13 @@ require 'debugger'
 module Sloe
   class Setup
 
+    attr_reader :complete?
+
     def initialize( topology )
       raise Errno::ENOENT unless Dir.exists?( topology )
       @topology = topology
       @routers = []
+      @complete = false
 
       # refactor this, it's shite code but works
       if File.exist? './.gen_config.conf'
@@ -29,6 +32,8 @@ module Sloe
 
         self.setup( yaml_file, @junos )
       end
+
+      @complete = true
     end
 
     def setup( yaml, junos )
