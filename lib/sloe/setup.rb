@@ -6,8 +6,6 @@ require 'debugger'
 module Sloe
   class Setup
 
-    attr_reader :complete?
-
     def initialize( topology )
       raise Errno::ENOENT unless Dir.exists?( topology )
       @topology = topology
@@ -73,6 +71,10 @@ module Sloe
       _apply_config( @config )
       @netconf.close
 
+    end
+
+    def complete?
+      @complete
     end
 
     # private
