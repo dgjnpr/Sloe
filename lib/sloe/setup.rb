@@ -7,11 +7,10 @@ module Sloe
   class Setup
     include Celluloid
 
-    def initialize( topology )
+    def initialize( topology, attrs = {:format => 'text', :action => 'merge'} )
       raise Errno::ENOENT unless Dir.exists?( topology )
       @topology = topology
       @routers = []
-      @complete = false
 
       # refactor this, it's shite code but works
       if File.exist? './.gen_config.conf'
@@ -29,13 +28,12 @@ module Sloe
         @hostname = File.basename yaml_file, '.yaml'
         @junos = Dir.glob( "#{@topology}/#{@hostname}*.junos" )
 
-        self.async.setup( yaml_file, @junos )
+        # @routers is an array of celluloid futures
+        @routers.push self.async.setup( yaml_file, attrs, @junos )
       end
-
-      @complete = true
     end
 
-    def setup( yaml, junos )
+    def setup( yaml, attrs, junos )
       @login = {
         :target   => @hostname,
         :username => 'netconf',
@@ -44,47 +42,36 @@ module Sloe
 
       @netconf = Netconf::SSH.new( @login )
 
-      @lab = File.read( "#{@location['template']}/lab/lab.conf" )
-      @config = []
-      @config.push({
-        :config => @lab, 
-        :attrs => {:format => 'text', :action => 'merge'} 
-      })
-
-      @netconf.open unless @netconf.state == :NETCONF_OPEN
-
-      @specific = File.read( "#{@location['template']}/lab/#{@hostname}.conf" )
-      @config.unshift({
-        :config => @specific, 
-        :attrs => { :format => 'text', :action => 'override' }
-      })
-      _apply_config( @config )
-
       junos.each do |file|
         @ver = File.read( file )
         _upgrade_junos( @ver )
       end
 
-      @config = [{
+      @config = {
         :config => _generate_config( yaml ),
-        :attrs  => { :format => 'text', :action => 'merge' }
-      }]
+        :attrs  => attrs
+      }
       _apply_config( @config )
       @netconf.close
 
+      # return true to say we're done
+      true
     end
 
     def complete?
-      @complete
+      @state = false
+      @routers.each do |complete|
+        @state = complete.value == true ? true : false
+        last if @state == false
+      end
+      @state
     end
 
     # private
       def _apply_config( config )
         begin
           @netconf.rpc.lock_configuration
-          config.each do |conf|
-            @netconf.rpc.load_configuration( conf[:config], conf[:attrs] )
-          end
+          @netconf.rpc.load_configuration( conf[:config], conf[:attrs] )
           @netconf.rpc.commit_configuration
           @netconf.rpc.unlock_configuration
         rescue Netconf::LockError => e
