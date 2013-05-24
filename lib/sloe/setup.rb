@@ -40,7 +40,7 @@ module Sloe
         :password => 'netconf'
       }
 
-      @netconf = Netconf::SSH.new( @login )
+      @netconf = Netconf::SSH.new( @login ).open
 
       junos.each do |file|
         @ver = File.read( file )
