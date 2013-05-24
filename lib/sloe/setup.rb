@@ -84,9 +84,9 @@ module Sloe
       def _upgrade_junos( file )
         debugger
         # extract image path from file, removing /var/junos/ from path
-        @image_path = File.read( file ).sub!( '/var/junos/', '' )
+        @image_path = File.read( file ).sub!( '/var/junos/', '' ).chomp!
 
-        @to_ver   = @image_path.match( '[^\/]+\/' )
+        @to_ver   = @image_path.match( '[^\/]+' )
         @from_ver = @netconf.rpc.get_system_information.xpath('//os-version').inner_text
 
         unless @from_ver == @to_ver
