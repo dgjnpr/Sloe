@@ -42,10 +42,7 @@ module Sloe
 
       @netconf = Netconf::SSH.new( @login ).open
 
-      junos.each do |file|
-        @ver = File.read( file )
-        _upgrade_junos( @ver )
-      end
+      junos.each { |file| _upgrade_junos( file ) }
 
       @config = {
         :config => _generate_config( yaml ),
@@ -84,13 +81,18 @@ module Sloe
         end
       end
 
-      def _upgrade_junos( to_ver )
-        from_ver = @netconf.rpc.get_system_information.xpath('//os-version').inner_text
+      def _upgrade_junos( file )
+        debugger
+        # extract image path from file, removing /var/junos/ from path
+        @image_path = File.read( file ).sub!( '/var/junos/', '' )
 
-        unless from_ver == to_ver
+        @to_ver   = @image_path.match( '[^\/]+\/' )
+        @from_ver = @netconf.rpc.get_system_information.xpath('//os-version').inner_text
+
+        unless @from_ver == @to_ver
           @re = @netconf.rpc.get_route_engine_information.xpath('route-engine/mastership-state')
           args = {
-            :package_name => "ftp://orion/#{to_ver}/jinstall-#{to_ver}-domestic-signed.tgz",
+            :package_name => "ftp://orion/#{@image_path}",
             :reboot => true,
             :no_copy => true,
             :unlink => true
