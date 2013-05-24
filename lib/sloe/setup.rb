@@ -29,7 +29,7 @@ module Sloe
         @junos = Dir.glob( "#{@topology}/#{@hostname}*.junos" )
 
         # @routers is an array of celluloid futures
-        @routers.push self.async.setup( yaml_file, attrs, @junos )
+        @routers.push self.future.setup( yaml_file, attrs, @junos )
       end
     end
 
