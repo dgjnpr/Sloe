@@ -71,7 +71,7 @@ module Sloe
       def _apply_config( config )
         begin
           @netconf.rpc.lock_configuration
-          @netconf.rpc.load_configuration( conf[:config], conf[:attrs] )
+          @netconf.rpc.load_configuration( config[:config], config[:attrs] )
           @netconf.rpc.commit_configuration
           @netconf.rpc.unlock_configuration
         rescue Netconf::LockError => e
