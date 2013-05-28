@@ -82,14 +82,15 @@ module Sloe
       end
 
       def _upgrade_junos( file )
-        debugger
+        # debugger
+        @upgrade_response = ''
         # extract image path from file, removing /var/junos/ from path
         @image_path = File.read( file ).sub!( '/var/junos/', '' ).chomp!
 
         @to_ver   = @image_path.match( '[^\/]+' )
         @from_ver = @netconf.rpc.get_system_information.xpath('//os-version').inner_text
 
-        unless @from_ver == @to_ver
+        unless @from_ver == @to_ver.to_s
           @re = @netconf.rpc.get_route_engine_information.xpath('route-engine/mastership-state')
           args = {
             :package_name => "ftp://orion/#{@image_path}",
@@ -103,7 +104,8 @@ module Sloe
             @netconf.rpc.request_package_add( args )
           elsif @re[0].inner_text == "master"
             args[:re1] = true
-            @netconf.rpc.request_package_add( args )
+            @upgrade_response = @netconf.rpc.request_package_add( args )
+            raise UpgradeError if @upgrade_response.match( 'Warning' )
             args[:re0] = true
             args.delete(:re1)
             @netconf.rpc.request_package_add( args )
