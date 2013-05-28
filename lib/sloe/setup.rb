@@ -59,7 +59,7 @@ module Sloe
       @state = false
       @routers.each do |complete|
         @state = complete.value == true ? true : false
-        last if @state == false
+        # last if @state == false
       end
       @state
     end
