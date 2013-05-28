@@ -57,9 +57,11 @@ module Sloe
 
     def complete?
       @state = false
-      @routers.each do |complete|
-        @state = complete.value == true ? true : false
-        # last if @state == false
+      while @state == false
+        @routers.each do |complete|
+          @state = complete.value == true ? true : false
+          # last if @state == false
+        end        
       end
       @state
     end
