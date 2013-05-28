@@ -2,12 +2,13 @@ require 'sloe/setup'
 
 describe Sloe::Setup do
   context "apply configuration change" do
-    pending "known working"
     it "to one device" do
+      pending "known working"
       @setup = Sloe::Setup.new( './test/topo1' )
       @setup.complete?.should be true
     end
     it "to muliple devices" do
+      pending "known working"
       @setup = Sloe::Setup.new( './test/topo2' )
       @setup.complete?.should be true
     end
