@@ -83,7 +83,6 @@ module Sloe
 
       def _upgrade_junos( file )
         # debugger
-        @upgrade_response = ''
         # extract image path from file, removing /var/junos/ from path
         @image_path = File.read( file ).sub!( '/var/junos/', '' ).chomp!
 
@@ -105,7 +104,7 @@ module Sloe
           elsif @re[0].inner_text == "master"
             args[:re1] = true
             @upgrade_response = @netconf.rpc.request_package_add( args )
-            raise UpgradeError if @upgrade_response.match( 'Warning' )
+            raise UpgradeError if @upgrade_resp.text.match( 'Warning' )
             args[:re0] = true
             args.delete(:re1)
             @netconf.rpc.request_package_add( args )
