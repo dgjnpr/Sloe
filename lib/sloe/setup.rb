@@ -1,7 +1,6 @@
 require 'celluloid'
 require 'net/netconf/jnpr'
 require 'ostruct'
-require 'timeout'
 require 'debugger'
 
 module Sloe
@@ -58,14 +57,15 @@ module Sloe
 
     def complete?
       @state = false
-      @status = Timeout::timeout( 1200 ) {
-        while @state == false
-          @routers.each do |complete|
-            @state = complete.value == true ? true : false
-          end
-          sleep 60
+      @counter = 0
+      while @state == false
+        sleep 60
+        @routers.each do |complete|
+          @state = complete.value == true ? true : false
         end
-      }
+        @counter =+ 1
+        last if @counter == 20
+      end
       @state
     end
 
