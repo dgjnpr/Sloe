@@ -56,17 +56,10 @@ module Sloe
     end
 
     def complete?
-      @state = false
-      @counter = 0
-      while @state == false
-        sleep 60
-        @routers.each do |complete|
-          @state = complete.value == true ? true : false
-        end
-        @counter =+ 1
-        last if @counter == 20
+      @routers.each do |complete|
+        complete.value
       end
-      @state
+      true
     end
 
     # private
