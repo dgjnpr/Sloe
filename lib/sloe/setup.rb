@@ -1,6 +1,7 @@
 require 'celluloid'
 require 'net/netconf/jnpr'
 require 'ostruct'
+require 'timeout'
 require 'debugger'
 
 module Sloe
@@ -57,12 +58,14 @@ module Sloe
 
     def complete?
       @state = false
-      while @state == false
-        @routers.each do |complete|
-          @state = complete.value == true ? true : false
-          # last if @state == false
-        end        
-      end
+      @status = Timeout::timeout( 1200 ) {
+        while @state == false
+          @routers.each do |complete|
+            @state = complete.value == true ? true : false
+          end
+          sleep 60
+        end
+      }
       @state
     end
 
@@ -105,11 +108,12 @@ module Sloe
             @netconf.rpc.request_package_add( args )
           elsif @re[0].inner_text == "master"
             args[:re1] = true
-            @upgrade_response = @netconf.rpc.request_package_add( args )
-            raise UpgradeError if @upgrade_resp.text.match( 'Warning' )
+            @upgrade = @netconf.rpc.request_package_add( args )
+            raise UpgradeError, @upgrade.xpath('//output') if @upgrade.xpath('//package-result').text.to_i != 0
             args[:re0] = true
             args.delete(:re1)
-            @netconf.rpc.request_package_add( args )
+            @upgrade = @netconf.rpc.request_package_add( args )
+            raise UpgradeError, @upgrade.xpath('//output') if @upgrade.xpath('//package-result').text.to_i != 0
           else
             args[:re0] = true
             @netconf.rpc.request_package_add( args )
