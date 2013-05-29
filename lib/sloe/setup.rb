@@ -87,7 +87,7 @@ module Sloe
       end
 
       def _upgrade_junos( file )
-        # debugger
+        debugger
         # extract image path from file, removing /var/junos/ from path
         @image_path = File.read( file ).sub!( '/var/junos/', '' ).chomp!
 
