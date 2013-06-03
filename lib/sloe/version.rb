@@ -1,4 +1,4 @@
 module Sloe
   # Current version
-  VERSION = "0.6.0a"
+  VERSION = "0.7.0"
 end
