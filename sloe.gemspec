@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency('net-scp', '>= 1.0.4')
   gem.add_development_dependency('rspec', '>= 2.12.0')
   gem.add_development_dependency('yard')
-  gem.add_development_dependency('pry-debugger')
+  # gem.add_development_dependency('pry-debugger')
   gem.add_development_dependency('simplecov')
   gem.add_development_dependency('ci_reporter')
 
