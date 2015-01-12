@@ -12,10 +12,10 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{A one stop shop for collecting data from a network device using NETCONF or SNMP}
   gem.homepage      = "https://github.com/dgjnpr/Sloe"
 
-  gem.add_dependency('snmp', '>= 1.1.0')
-  gem.add_dependency('netconf', '~> 0.3.1')
-  gem.add_dependency('net-scp', '>= 1.0.4')
-  gem.add_development_dependency('rspec', '>= 2.12.0')
+  gem.add_dependency('snmp', '~> 1.1')
+  gem.add_dependency('netconf', '~> 0.3')
+  gem.add_dependency('net-scp', '~> 1.0')
+  gem.add_development_dependency('rspec', '~> 2.12')
   gem.add_development_dependency('yard')
   # gem.add_development_dependency('pry-debugger')
   gem.add_development_dependency('simplecov')
