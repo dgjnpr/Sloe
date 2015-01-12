@@ -1,6 +1,4 @@
-require 'sloe'
-require 'sloe/junos'
-# require 'ruby-debug'
+require 'spec_helper'
 
 describe Sloe do
   context "invoked with block" do

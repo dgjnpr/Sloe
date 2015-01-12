@@ -1,5 +1,4 @@
-require 'sloe'
-require 'ruby-debug'
+require 'sloe/junos'
 
 describe Sloe do
 

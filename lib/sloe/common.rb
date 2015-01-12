@@ -73,7 +73,6 @@ module Netconf
       def method_missing( method, params = nil, attrs = nil )
         rpc = Netconf::RPC::Builder.send( method, params, attrs )
         if @logging
-          # log_attrs = attrs[:format] = 'text' ? attrs : {:format => 'text'}
           log_attrs = attrs ? attrs : {}
           log_attrs[:format] = 'text'
           Dir.mkdir @logging[:path]
