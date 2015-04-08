@@ -10,8 +10,9 @@ module Sloe
     # @param traffic_duration [FixNum] duration that traffic should run for, in seconds
     # @param ixia_exe [String] path to shell script that executes TCL
     # @param clear_stats_after [FixNum] number of seconds to wait after configuring protocols before clearing stats
+    # @param ftp_path [String] path on Windows client FTP server to put Ixia traffic stat results. Take care to triple escape back slashes (yes... really!)
     # @return [Sloe::Ixia] object that can execute IxN config file
-    def initialize(host: 'localhost', port: 8009, version: nil, ixncfg: nil, traffic_duration: 60, ixia_exe: '/root/ixos/bin/ixia_shell', clear_stats_after: 10)
+    def initialize(host: 'localhost', port: 8009, version: nil, ixncfg: nil, traffic_duration: 60, ixia_exe: '/root/ixos/bin/ixia_shell', clear_stats_after: 10, ftp_path: 'c:\\\\inetpub\\\\ftproot\\\\Reports')
       if ixncfg == nil
         fail ArgumentError, "missing mandatory IxNetwork script"
       end
@@ -25,6 +26,7 @@ module Sloe
       # base csv file name on IxN cfg file name
       @csv_file = File.basename(ixncfg).sub('.ixncfg','')
       @clear_stats_after = clear_stats_after
+      @ftp_path = ftp_path
 
       self
     end
@@ -183,13 +185,13 @@ module Sloe
       code = <<-TCL.gsub(/^\s+\|/,'')
         |set root [ixNet getRoot]
         |set stats $root/statistics
-        |set csvWindowsPath "c:\\\\inetpub\\\\ftproot\\\\Reports"
+        |set csvWindowsPath "#@ftp_path"
         |ixNet setAttr $stats -enableCsvLogging "true"
         |ixNet setAttr $stats -csvFilePath $csvWindowsPath
         |ixNet setAttr $stats -pollInterval 3
         |ixNet commit
         |set li1 [list "Flow Statistics"]
-        |set csvFileName "#{@csv_file}"
+        |set csvFileName "#@csv_file"
         |set opts [::ixTclNet::GetDefaultSnapshotSettings]
         |lset opts [lsearch $opts *Location*] [subst {Snapshot.View.Csv.Location: $csvWindowsPath}]
         |lset opts [lsearch $opts *GeneratingMode*] {Snapshot.View.Csv.GeneratingMode: kAppendCSVFile}
