@@ -131,11 +131,14 @@ module Sloe
         |ixNet exec loadConfig [ixNet readFrom "#@ixncfg"]
         |set root [ixNet getRoot]
         |set vportList [ixNet getList $root vport]
-        |after 120000
-        |ixTclNet::CheckLinkState $vportList doneList
+        |ixTclNet::CheckLinkState $vportList notReadVportList
+        |foreach vport $notReadyVportList {
+        |  set port [IxNet getAttribute $vport -connectedTo]
+        |  ixNet exec clearOwnership $port
+        |  ixNet exec connectPort $vport
+        |}
         |if {[llength $doneList]} {
-        |    puts "Error:  links are not up on $doneList"
-        |    return -1
+        |  after 10000
         |}
       TCL
       code
@@ -206,6 +209,10 @@ module Sloe
     def clean_up
       code = <<-TCL.gsub(/^\s+\|/,'')
         |cleanUp
+        |foreach vport $vportList {
+        |  set port [IxNet getAttribute $vport -connectedTo]
+        |  ixNet exec clearOwnership $port
+        |}
       TCL
       code
     end
