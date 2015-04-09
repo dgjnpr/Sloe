@@ -14,7 +14,7 @@ module Sloe
     # @return [Sloe::Ixia] object that can execute IxN config file
     def initialize(host: 'localhost', port: 8009, version: nil, ixncfg: nil, traffic_duration: 60, ixia_exe: '/root/ixos/bin/ixia_shell', clear_stats_after: 10, ftp_path: 'c:\\\\inetpub\\\\ftproot\\\\Reports')
       if ixncfg == nil
-        fail ArgumentError, "missing mandatory IxNetwork script"
+        fail ArgumentError, "missing mandatory ixNetwork script"
       end
 
       @host = host
@@ -133,7 +133,7 @@ module Sloe
         |set vportList [ixNet getList $root vport]
         |ixTclNet::CheckLinkState $vportList notReadyVportList
         |foreach vport $notReadyVportList {
-        |  set port [IxNet getAttribute $vport -connectedTo]
+        |  set port [ixNet getAttribute $vport -connectedTo]
         |  ixNet exec clearOwnership $port
         |  ixNet exec connectPort $vport
         |}
@@ -210,7 +210,7 @@ module Sloe
       code = <<-TCL.gsub(/^\s+\|/,'')
         |cleanUp
         |foreach vport $vportList {
-        |  set port [IxNet getAttribute $vport -connectedTo]
+        |  set port [ixNet getAttribute $vport -connectedTo]
         |  ixNet exec clearOwnership $port
         |}
       TCL
