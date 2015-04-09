@@ -131,7 +131,7 @@ module Sloe
         |ixNet exec loadConfig [ixNet readFrom "#@ixncfg"]
         |set root [ixNet getRoot]
         |set vportList [ixNet getList $root vport]
-        |ixTclNet::CheckLinkState $vportList notReadVportList
+        |ixTclNet::CheckLinkState $vportList notReadyVportList
         |foreach vport $notReadyVportList {
         |  set port [IxNet getAttribute $vport -connectedTo]
         |  ixNet exec clearOwnership $port
