@@ -137,7 +137,7 @@ module Sloe
         |  ixNet exec clearOwnership $port
         |  ixNet exec connectPort $vport
         |}
-        |if {[llength $doneList]} {
+        |if {[llength $notReadyVportList]} {
         |  after 10000
         |}
       TCL
