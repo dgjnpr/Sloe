@@ -12,15 +12,16 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{A one stop shop for collecting data from a network device using NETCONF or SNMP}
   gem.homepage      = "https://github.com/dgjnpr/Sloe"
 
-  gem.add_dependency('snmp', '~> 1.1')
-  gem.add_dependency('netconf', '~> 0.3')
-  gem.add_dependency('net-scp', '~> 1.0')
-  gem.add_development_dependency('rspec', '~> 2.12')
-  gem.add_development_dependency('yard')
-  # gem.add_development_dependency('pry-debugger')
-  gem.add_development_dependency('simplecov')
-  gem.add_development_dependency('ci_reporter')
-  gem.add_development_dependency('rake')
+  gem.add_dependency('snmp', '~> 1.2')
+  gem.add_dependency('net-netconf', '~> 0.3')
+  gem.add_dependency('net-scp', '~> 1.2')
+  gem.add_development_dependency('rspec', '~> 3.4')
+  gem.add_development_dependency('yard', '~> 0.8')
+  gem.add_development_dependency('simplecov', '~> 0.11')
+  gem.add_development_dependency('ci_reporter', '~> 2.0')
+  gem.add_development_dependency('ci_reporter_rspec')
+  gem.add_development_dependency('rake', '>= 10')
+  gem.add_development_dependency('pry-byebug', '~> 3.3')
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
