@@ -8,9 +8,13 @@ Gem::Specification.new do |gem|
   gem.version       = Sloe::VERSION
   gem.authors       = ['David Gethings']
   gem.email         = ['dgjnpr@gmail.com']
-  gem.description   = %q(Sloe uses NETCONF and/or SNMP to gather data regarding a network device. Designed to help with automated testing this gem can also be used with things like Ruby on Rails)
-  gem.summary       = %q(A one stop shop for collecting data from a network device using NETCONF or SNMP)
   gem.homepage      = 'https://github.com/dgjnpr/Sloe'
+  gem.description   = <<-DESC
+Sloe uses NETCONF and/or SNMP to gather data regarding a network device. Designed to help with automated testing this gem can also be used with things like Ruby on Rails
+DESC
+  gem.summary       = <<-SUMM
+A one stop shop for collecting data from a network device using NETCONF or SNMP
+SUMM
 
   gem.add_dependency('snmp', '~> 1.1')
   gem.add_dependency('netconf', '~> 0.3')
