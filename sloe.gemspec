@@ -15,6 +15,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency('snmp', '~> 1.2')
   gem.add_dependency('net-netconf', '~> 0.3')
   gem.add_dependency('net-scp', '~> 1.2')
+  gem.add_dependency('junos-ez-stdlib', '~> 0.1')
   gem.add_development_dependency('rspec', '~> 3.4')
   gem.add_development_dependency('yard', '~> 0.8')
   gem.add_development_dependency('simplecov', '~> 0.11')
