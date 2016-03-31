@@ -21,7 +21,7 @@ SUMM
   spec.add_dependency 'netconf', '~> 0.3'
   spec.add_dependency 'net-scp', '~> 1.0'
   spec.add_development_dependency 'bundler', '~> 1.11'
-  spec.add_development_dependency 'rspec', '~> 2.12'
+  spec.add_development_dependency 'rspec', '~> 2.99'
   spec.add_development_dependency 'yard', '~> 0.8'
   spec.add_development_dependency 'pry-byebug', '~> 3.3'
   spec.add_development_dependency 'simplecov', '~> 0.11'
