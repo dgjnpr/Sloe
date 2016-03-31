@@ -31,14 +31,16 @@ describe Sloe do
     it 'snmp.get_next returns one PDU' do
       expect(dut.snmp.get_next('system').varbind_list.size).to eq(1)
     end
-    it 'snmp.walk returns a list of PDUs none of which are nil' do
-      expect(dut.snmp.walk('system')).not_to eq(nil)
+    it 'snmp.walk returns a list of PDUs' do
+      vbs = []
+      dut.snmp.walk('system') { |vb| vbs << vb }
+      expect(vbs.size).to be > 0
     end
   end
 
   context 'JNX Enterprise MIBs' do
     it 'jnxBoxDescr.0 has a valid value' do
-      expect(dut.snmp.get_value('jnxBoxDescr.0')).to include('Juniper')
+      expect(dut.snmp.get_value('jnxBoxDescr.0')).not_to eq(SNMP::NoSuchObject)
     end
   end
 
