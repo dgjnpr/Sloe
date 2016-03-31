@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/sloe.svg)](https://badge.fury.io/rb/sloe)
+
 # Sloe
 
 Sloe uses NETCONF and/or SNMP to gather data regarding a network device. Designed to help with automated testing this gem can also be used with things like Ruby on Rails
