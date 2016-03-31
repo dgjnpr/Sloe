@@ -7,7 +7,8 @@ describe Sloe do
       target: Envyable.load('/tmp/env.yaml', host)['ip_address'],
       username: 'root',
       password: 'Juniper',
-      port: Envyable.load('/tmp/env.yaml', host)['ssh_port']
+      port: Envyable.load('/tmp/env.yaml', host)['ssh_port'],
+      snmp_port: 1161
     }
   end
 

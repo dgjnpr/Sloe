@@ -12,14 +12,15 @@ describe Sloe do
       password: 'Juniper',
       port: Envyable.load('/tmp/env.yaml', host)['ssh_port'],
       mib_dir: './mibs',
-      mib_modules: %w{SNMPv2-SMI SNMPv2-MIB IF-MIB IP-MIB TCP-MIB UDP-MIB}.concat(jnx_mibs)
+      mib_modules: %w{SNMPv2-SMI SNMPv2-MIB IF-MIB IP-MIB TCP-MIB UDP-MIB}.concat(jnx_mibs),
+      snmp_port: 1161
     }
   end
   subject(:dut) { Sloe::Junos.new(login) }
 
   context 'SNMP API' do
     it 'snmp.get_value returns valid value' do
-      expect(dut.snmp.get_value('sysDescr.0')).to =~ /^Juniper Networks,/
+      expect(dut.snmp.get_value('sysDescr.0')).to include('Juniper Networks')
     end
     it 'snmp.get returns one PDU' do
       expect(dut.snmp.get('sysDescr.0').varbind_list.size).to eq(1)
@@ -37,7 +38,7 @@ describe Sloe do
 
   context 'JNX Enterprise MIBs' do
     it 'jnxBoxDescr.0 has a valid value' do
-      expect(dut.snmp.get_value('jnxBoxDescr.0')).to =~ /^Juniper/
+      expect(dut.snmp.get_value('jnxBoxDescr.0')).to include('Juniper')
     end
   end
 
@@ -68,10 +69,10 @@ describe Sloe do
       expect { dut.cli('show version') }.not_to raise_error
     end
     it "cli('show version') contains OS information" do
-      expect(dut.cli('show version')).to =~ /JUNOS Base OS/
+      expect(dut.cli('show version')).to include('JUNOS Base OS')
     end
     it "cli('show version', :foo => 'bar') still contains OS information" do
-      expect(dut.cli('show version', foo: 'bar')).to =~ /JUNOS Base OS/
+      expect(dut.cli('show version', foo: 'bar')).to include('JUNOS Base OS')
     end
     it "cli('clear interface statistics') empty reply does not cause an error" do
       expect { dut.cli('clear interface statistics fxp0') }.not_to raise_error

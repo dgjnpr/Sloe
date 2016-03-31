@@ -17,7 +17,8 @@ module Sloe
         host:        args[:target], 
         mib_dir:     args[:mib_dir], 
         mib_modules: args[:mib_modules],
-        community:   args[:community]
+        community:   args[:community],
+        port:        args[:snmp_port]
       }
       @snmp = SNMP::Manager.new(@snmp_args)
 
