@@ -14,8 +14,8 @@ module Sloe
     # {http://rubydoc.info/gems/snmp/SNMP/Manager:initialize SNMP::Manager#new}
     def initialize(args, &block)
       @snmp_args = {
-        host:        args[:target], 
-        mib_dir:     args[:mib_dir], 
+        host:        args[:target],
+        mib_dir:     args[:mib_dir],
         mib_modules: args[:mib_modules],
         community:   args[:community],
         port:        args[:snmp_port]
@@ -44,11 +44,10 @@ module Netconf
   class Transport
     attr_accessor :logging
 
-    def initialize( &block ) 
-      
+    def initialize(&block)
       @state = :NETCONF_CLOSED
       @os_type = @args[:os_type] || Netconf::DEFAULT_OS_TYPE
-            
+
       @rpc = Netconf::RPC::Executor.new(self, @os_type, self.logging)
       @rpc_message_id = 1
       
@@ -57,7 +56,6 @@ module Netconf
         yield self
         close
       end
-      
     end
   end
   module RPC
@@ -67,10 +65,10 @@ module Netconf
         @trans = trans
         @logging = logging
         begin  
-          extend Netconf::RPC::const_get( os_type )                
+          extend Netconf::RPC::const_get( os_type )
         rescue NameError
           # no extensions available ...
-        end        
+        end
       end
 
       def method_missing( method, params = nil, attrs = nil )
