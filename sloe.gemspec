@@ -28,6 +28,8 @@ SUMM
   spec.add_development_dependency 'rake', '~> 11.1'
   spec.add_development_dependency 'rubocop', '~> 0.39'
   spec.add_development_dependency 'envyable', '~> 1.0'
+  spec.add_development_dependency 'guard', '~> 2.13'
+  spec.add_development_dependency 'guard-rspec', '~> 4.6'
 
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.executables   = spec.files.grep(%r{^bin/}).map { |f| File.basename(f) }
