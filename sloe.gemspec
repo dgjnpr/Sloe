@@ -20,7 +20,9 @@ SUMM
   spec.add_dependency 'snmp', '~> 1.1'
   spec.add_dependency 'netconf', '~> 0.3'
   spec.add_dependency 'net-scp', '~> 1.0'
-  spec.add_development_dependency 'bundler', '~> 1.11'
+
+  # vagrant requires no later than 1.10.6
+  spec.add_development_dependency 'bundler', '= 1.10.6'
   spec.add_development_dependency 'rspec', '~> 2.99'
   spec.add_development_dependency 'yard', '~> 0.8'
   spec.add_development_dependency 'pry-byebug', '~> 3.3'
@@ -30,6 +32,7 @@ SUMM
   spec.add_development_dependency 'envyable', '~> 1.0'
   spec.add_development_dependency 'guard', '~> 2.13'
   spec.add_development_dependency 'guard-rspec', '~> 4.6'
+  spec.add_development_dependency 'derelict', '~> 0.6'
 
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   spec.executables   = spec.files.grep(%r{^bin/}).map { |f| File.basename(f) }
