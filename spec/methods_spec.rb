@@ -39,8 +39,8 @@ describe Sloe do
   end
 
   context 'JNX Enterprise MIBs' do
-    it 'jnxBoxDescr.0 has a valid value' do
-      expect(dut.snmp.get_value('jnxBoxDescr.0')).not_to eq(SNMP::NoSuchObject)
+    it 'jnxCmCfgChgLatestUser.0 has a valid value' do
+      expect(dut.snmp.get_value('jnxCmCfgChgLatestUser.0')).not_to eq(SNMP::NoSuchObject)
     end
   end
 
