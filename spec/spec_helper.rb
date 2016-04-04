@@ -1,6 +1,11 @@
+require 'pry-byebug'
+require 'envyable'
+require 'simplecov'
+SimpleCov.start
+
+lib = File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sloe'
 require 'sloe/junos'
-require 'pry-byebug'
-require 'simplecov'
 
-SimpleCov.start
+Envyable.load('/tmp/env.yaml', 'host_list')
