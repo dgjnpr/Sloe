@@ -32,6 +32,7 @@ SUMM
   spec.add_development_dependency 'envyable', '~> 1.0'
   spec.add_development_dependency 'guard', '~> 2.13'
   spec.add_development_dependency 'guard-rspec', '~> 4.6'
+  spec.add_development_dependency 'guard-bundler', '~> 2.1'
   spec.add_development_dependency 'derelict', '~> 0.6'
 
   spec.files         = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
