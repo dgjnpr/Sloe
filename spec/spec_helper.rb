@@ -8,4 +8,4 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sloe'
 # require 'sloe/junos'
 
-Envyable.load('/tmp/env.yaml', 'host_list')
+Envyable.load('tmp/env.yaml', 'host_list')

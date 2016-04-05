@@ -5,36 +5,46 @@ module Sloe
   # Inherits from {http://rubydoc.info/gems/netconf/Netconf/SSH Netconf::SSH}
   class Common < Netconf::SSH
     # Provides access to the SNMP object
-    attr_reader :snmp
-    attr_accessor :logging
+    attr_accessor :logging, :target, :mib_dir, :mib_modules, :snmp_port
+    attr_accessor :community
 
     # Create Sloe::Common object.
     # Accepts arguments for
     # {http://rubydoc.info/gems/netconf/Netconf/SSH:initialize Netconf::SSH#new}
     # {http://rubydoc.info/gems/snmp/SNMP/Manager:initialize SNMP::Manager#new}
     def initialize(args, &block)
-      @snmp_args = {
-        host:        args[:target],
-        mib_dir:     args[:mib_dir],
-        mib_modules: args[:mib_modules],
-        community:   args[:community],
-        port:        args[:snmp_port]
-      }
-      @snmp = SNMP::Manager.new(@snmp_args)
-
+      @target = args[:target]
+      parse_args(args)
       # logging of RPCs is optional. If arguments are provided then
       # they must be needed/enabled. This also requires extending
       # Netconf::RPC::Executor.method_missing(), which is done below
       self.logging = args[:logging]
 
-      if block_given?
-        super(args, &block)
-        return
-      else
-        super(args)
-        open
-        self
-      end
+      block_given? ? super(args, &block) : super(args)
+      open unless block_given?
+    end
+
+    def snmp
+      @snmp = SNMP::Manager.new(snmp_args)
+    end
+
+    private
+
+    def snmp_args
+      {
+        host:        target,
+        mib_dir:     mib_dir,
+        mib_modules: mib_modules,
+        community:   community,
+        port:        snmp_port
+      }
+    end
+
+    def parse_args(args)
+      @mib_dir     = args[:mib_dir]
+      @mib_modules = args[:mib_modules]
+      @community   = args[:community]
+      @snmp_port   = args[:snmp_port]
     end
   end
 end
