@@ -1,16 +1,16 @@
 require 'spec_helper'
 
-describe Sloe do
+RSpec.describe Sloe::Junos do
   let(:host) { ENV['hosts'].split(':').first }
   let(:jnx_mibs) do
     Dir.glob('./mibs/JUNIPER-*.yaml').map { |f| File.basename(f, '.yaml') }
   end
   let(:login) do
     {
-      target: Envyable.load('/tmp/env.yaml', host)['ip_address'],
+      target: Envyable.load('tmp/env.yaml', host)['ip_address'],
       username: 'root',
       password: 'Juniper',
-      port: Envyable.load('/tmp/env.yaml', host)['ssh_port'],
+      port: Envyable.load('tmp/env.yaml', host)['ssh_port'],
       mib_dir: './mibs',
       mib_modules: %w{SNMPv2-SMI SNMPv2-MIB IF-MIB IP-MIB TCP-MIB UDP-MIB}.concat(jnx_mibs),
       snmp_port: 1161
@@ -43,6 +43,16 @@ describe Sloe do
       expect(dut.snmp.get_value('jnxCmCfgChgLatestUser.0')).not_to eq(SNMP::NoSuchObject)
     end
   end
+
+  context 'Junos extensions' do
+    it 'Sloe::Junos responds to Junos specific RPCs' do
+      expect(Sloe::Junos.new(login).rpc).to respond_to(:lock_configuration)
+    end
+    it 'Sloe::Device does not respond to Junos specific RPCs' do
+      expect(Sloe::Device.new(login).rpc).to_not respond_to(:lock_configuration)
+    end
+  end
+
 
   context 'NETCONF API' do
     it 'rpc.get_interface_information functions without error' do
