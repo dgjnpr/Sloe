@@ -1,6 +1,5 @@
 require 'net/netconf/jnpr'
 require 'sloe/common'
-require 'fileutils'
 
 module Sloe
   # Class that supports Junos specifc Netconf extensions
