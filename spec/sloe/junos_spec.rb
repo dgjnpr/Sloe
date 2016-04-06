@@ -53,7 +53,6 @@ RSpec.describe Sloe::Junos do
     end
   end
 
-
   context 'NETCONF API' do
     it 'rpc.get_interface_information functions without error' do
       expect { dut.rpc.get_interface_information }.not_to raise_error
@@ -88,6 +87,18 @@ RSpec.describe Sloe::Junos do
     end
     it "cli('clear interface statistics') empty reply does not cause an error" do
       expect { dut.cli('clear interface statistics fxp0') }.not_to raise_error
+    end
+  end
+
+  context 'apply configuration' do
+    it 'apply_configuration works without error' do
+      conf = 'set system location building hell'
+      expect { dut.apply_configuration(conf, format: 'set') }.not_to raise_error
+    end
+
+    after(:each) do
+      conf = 'delete system location'
+      dut.apply_configuration(conf, format: 'set')
     end
   end
 end
