@@ -24,11 +24,11 @@ SUMM
   # vagrant requires no later than 1.10.6
   spec.add_development_dependency 'bundler', '= 1.10.6'
   spec.add_development_dependency 'rspec', '~> 2.99'
-  spec.add_development_dependency 'yard', '~> 0.8'
+  spec.add_development_dependency 'yard', '~> 0.9.11'
   spec.add_development_dependency 'pry-byebug', '~> 3.3'
   spec.add_development_dependency 'simplecov', '~> 0.11'
   spec.add_development_dependency 'rake', '~> 11.1'
-  spec.add_development_dependency 'rubocop', '~> 0.39'
+  spec.add_development_dependency 'rubocop', '~> 0.49.0'
   spec.add_development_dependency 'envyable', '~> 1.0'
   spec.add_development_dependency 'guard', '~> 2.13'
   spec.add_development_dependency 'guard-rspec', '~> 4.6'
